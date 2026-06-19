@@ -1,4 +1,4 @@
-const target = new Date('2026-08-22T10:00:00+03:00').getTime();
+const target = new Date('2026-08-22T00:00:00+03:00').getTime();
 const fields = {
   days: document.getElementById('days'),
   hours: document.getElementById('hours'),
