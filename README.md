@@ -40,3 +40,10 @@ Nevajag saglabāt vecos Next.js failus, piemēram, `app/`, `pages/`, `src/`, `ne
 ## Attēli
 
 Logo un ES līdzfinansējuma attēls šobrīd tiek ielādēts no `familyactivityhub.com`. Ja vēlāk vēlaties lapu padarīt pilnībā neatkarīgu, attēlus var lejupielādēt un ievietot lokālā `visuals/` mapē.
+
+
+## Provizoriskie laiki
+
+- Ierašanās un reģistrācija: no 10.30
+- Aktivitātes: 11.00–17.00
+- Noslēgums: 17.30
