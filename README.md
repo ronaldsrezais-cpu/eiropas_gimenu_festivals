@@ -47,3 +47,16 @@ Logo un ES līdzfinansējuma attēls šobrīd tiek ielādēts no `familyactivity
 - Ierašanās un reģistrācija: no 10.30
 - Aktivitātes: 11.00–17.00
 - Noslēgums: 17.30
+
+
+## Jaunākās izmaiņas
+
+- Aktivitātes organizācija “A7 Ielu Vingrotāji” nomainīta uz “Ielu Vingrotāji”.
+- Kartes sadaļā pievienota iegulta Google Maps karte ar Uzvaras parku, Rīgā.
+- Kājenē pievienots bloks “Koordinē: LSFP” un “Atbalsta: Izglītības un zinātnes ministrija”.
+- Logo faili atrodas mapē `assets/logos/`.
+
+
+## Pēdējais atjauninājums
+- Balvu sadaļa pārveidota elastīgāk: bez konkrētiem 10/20/visu aktivitāšu sliekšņiem.
+- Teksts paredz iespēju balvas piešķirt pēc izpildīto aktivitāšu skaita vai izlozes principa.
