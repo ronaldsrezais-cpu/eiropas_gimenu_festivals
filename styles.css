@@ -488,18 +488,28 @@ h3 { font-size: 24px; letter-spacing: -0.015em; }
   font-weight: 900;
 }
 
-.partner-card img {
+.partner-logo {
   display: block;
   width: 100%;
-  max-height: 92px;
   object-fit: contain;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 12px;
 }
 
-.partner-card:first-child img {
-  max-height: 82px;
+.partner-logo--transparent {
+  max-width: 360px;
+  max-height: 76px;
+  justify-self: start;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+.partner-logo--panel {
+  max-width: 260px;
+  max-height: 104px;
+  justify-self: start;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px;
 }
 
 @media (max-width: 760px) {
