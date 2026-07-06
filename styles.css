@@ -885,3 +885,13 @@ h3 { font-size: 24px; letter-spacing: -0.015em; }
 .footer-socials {
   display: none !important;
 }
+
+
+/* Transparent IZM logo update */
+.partner-logo--izm-full {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  max-width: 260px;
+  max-height: 165px;
+}
