@@ -1,102 +1,32 @@
-# Eiropas Ģimeņu festivāls – Home & Heart
+# Home & Heart – Eiropas Ģimeņu festivāls
 
-Statiskā mājaslapas versija latviešu valodā festivāla publicēšanai Vercel vai citā hostinga platformā.
+This ZIP is a Next.js-compatible Vercel deployment package.
 
-## Faili
+The registration form is already connected to this Google Apps Script Web App URL:
 
-- `index.html` – lapas saturs
-- `styles.css` – vizuālais noformējums
-- `script.js` – mobilā izvēlne un laika atskaite
-- `package.json` – statiskam Vercel izvietojumam
-- `vercel.json` – norāda, ka projekts nav Next.js lietotne
+https://script.google.com/macros/s/AKfycbxFtZrMEgK9_B-xh4XpjXexUlBgRDSMigatcYA2XWigpNODxs3Y58mFv2AC5QNIeNewSg/exec
 
-## Reģistrācijas sadaļa
+## Vercel deployment
 
-Lapas sadaļā “Reģistrācija” šobrīd ir vietturis “Reģistrācijas forma drīzumā”. Kad Google Forms vai cita pieteikšanās forma ir gatava, `index.html` failā jāatrod šī poga un `href="#"` vietā jāievieto īstā formas saite.
+Use this package if Vercel is currently treating the project as a Next.js app.
 
-Ieteicamais reģistrācijas princips:
+Root files/folders must be:
 
-1. Ģimene iepriekš aizpilda īsu formu.
-2. Formā norāda ģimenes nosaukumu un aptuveno dalībnieku skaitu.
-3. Organizatori no pieteikumiem sagatavo aktivitāšu kartes vai uzlīmes ar ģimenes nosaukumu.
-4. Festivāla dienā ģimene reģistrācijā saņem savu karti, apmeklē aktivitātes un krāj zīmogus.
-5. Par 10, 20 vai visām pieejamajām aktivitātēm ģimene saņem atbilstošu balvu.
+- `app/`
+- `public/`
+- `package.json`
+- `vercel.json`
+- `apps-script/` (reference only)
 
-## Vercel izvietošana
+Vercel settings:
 
-Repozitorija saknē jāatrodas šiem failiem:
+- Framework Preset: Next.js
+- Build Command: `npm run build`
+- Output Directory: leave empty
+- Root Directory: repository root
 
-```text
-index.html
-styles.css
-script.js
-package.json
-vercel.json
-README.md
-```
+If the GitHub repository still contains old files such as `index.html`, `styles.css`, `script.js` in the root, they can stay but are no longer needed. The important files are the Next.js files above.
 
-Nevajag saglabāt vecos Next.js failus, piemēram, `app/`, `pages/`, `src/`, `next.config.js` vai vecu `package.json` ar `next build`.
+## Apps Script
 
-## Attēli
-
-Logo un ES līdzfinansējuma attēls šobrīd tiek ielādēts no `familyactivityhub.com`. Ja vēlāk vēlaties lapu padarīt pilnībā neatkarīgu, attēlus var lejupielādēt un ievietot lokālā `visuals/` mapē.
-
-
-## Provizoriskie laiki
-
-- Ierašanās un reģistrācija: no 10.30
-- Aktivitātes: 11.00–17.00
-- Noslēgums: 17.30
-
-
-## Jaunākās izmaiņas
-
-- Aktivitātes organizācija “A7 Ielu Vingrotāji” nomainīta uz “Ielu Vingrotāji”.
-- Kartes sadaļā pievienota iegulta Google Maps karte ar Uzvaras parku, Rīgā.
-- Kājenē pievienots bloks “Koordinē: LSFP” un “Atbalsta: Izglītības un zinātnes ministrija”.
-- Logo faili atrodas mapē `assets/logos/`.
-
-
-## Pēdējais atjauninājums
-- Balvu sadaļa pārveidota elastīgāk: bez konkrētiem 10/20/visu aktivitāšu sliekšņiem.
-- Teksts paredz iespēju balvas piešķirt pēc izpildīto aktivitāšu skaita vai izlozes principa.
-
-
-## Custom registration form + Google Sheets
-
-This version uses a custom website form instead of an embedded Google Form.
-
-### How to connect it to Google Sheets
-
-1. Create a new Google Sheet for festival registrations.
-2. In the Google Sheet, open **Extensions > Apps Script**.
-3. Replace the default code with the contents of `apps-script/Code.gs`.
-4. Save the Apps Script project.
-5. Click **Deploy > New deployment**.
-6. Select **Web app**.
-7. Set:
-   - **Execute as:** Me
-   - **Who has access:** Anyone
-8. Click **Deploy** and copy the Web app URL.
-9. In `index.html`, find:
-
-```html
-action="PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE"
-```
-
-10. Replace it with the Web app URL.
-11. Deploy the website again.
-
-Registrations will be added to a Google Sheet tab named **Pieteikumi**.
-
-
-## Vercel deployment note
-
-This is a static HTML/CSS/JS website.
-
-For Vercel:
-- Framework preset: Other
-- Build command: leave empty or use `npm run build`
-- Output directory: leave empty / project root
-- Do not use Next.js settings
-- `vercel.json` has been removed because it caused an invalid configuration error.
+The Apps Script code is kept in `apps-script/Code.gs` for reference. If the Google Web App is redeployed later, update the form `action` URL in `app/page.js`.
