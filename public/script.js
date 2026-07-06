@@ -74,3 +74,12 @@ if (familyForm && formStatus) {
     }, 1100);
   });
 }
+
+
+const logoBrand = document.querySelector('.logo-brand');
+logoBrand?.addEventListener('click', function (event) {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  header?.classList.remove('open');
+  menuButton?.setAttribute('aria-expanded', 'false');
+});

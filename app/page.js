@@ -44,7 +44,7 @@ const pageHtml = `<header class="site-header" id="top">
         <div class="hero-text-block">
           <p>Festivālā ģimenes varēs brīvi izmēģināt dažādus sporta veidus, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā.</p>
           <p>Dalība ir bez maksas, un aktivitātes būs piemērotas dažādiem vecumiem un sagatavotības līmeņiem.</p>
-          <p>Ģimenes saņems aktivitāšu kartes, kurās varēs krāt zīmogus, sekot līdzi izmēģinātajām stacijām un, sakrājot zīmogus, saņemt balvas.</p>
+          <p><strong>Ģimenes saņems aktivitāšu kartes, kurās varēs krāt zīmogus, sekot līdzi izmēģinātajām stacijām un, sakrājot zīmogus, saņemt balvas.</strong></p>
         </div>
         <div class="hero-actions">
           <a class="button primary" href="#registracija">Pieteikt ģimeni</a>
