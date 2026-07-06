@@ -2003,3 +2003,76 @@ h3 { font-size: 24px; letter-spacing: -0.015em; }
     padding-bottom: 28px !important;
   }
 }
+
+
+/* ===== Remove remaining empty hero gap ===== */
+
+@media (min-width: 981px) {
+  .hero {
+    min-height: auto !important;
+    align-items: start !important;
+    padding-top: 14px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .hero.section-pad {
+    padding-top: 14px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .hero-content {
+    padding-top: 58px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .hero-text-block {
+    margin-bottom: 16px !important;
+  }
+
+  .hero-actions {
+    margin-bottom: 0 !important;
+  }
+
+  .hero-card {
+    margin-top: 0 !important;
+  }
+
+  .shape-green {
+    bottom: 18px !important;
+  }
+
+  .countdown-strip {
+    margin-top: 0 !important;
+    transform: translateY(0) !important;
+  }
+
+  .programme {
+    padding-top: 24px !important;
+    border-radius: 32px 32px 0 0 !important;
+  }
+
+  .programme-heading {
+    margin-bottom: 12px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-content {
+    padding-top: 48px !important;
+  }
+
+  .hero.section-pad {
+    padding-bottom: 4px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: auto !important;
+    padding-bottom: 18px !important;
+  }
+
+  .countdown-strip {
+    margin-top: 0 !important;
+  }
+}
