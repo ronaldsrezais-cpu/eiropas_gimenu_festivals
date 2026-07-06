@@ -170,7 +170,7 @@ const pageHtml = `<header class="site-header" id="top">
         <div>
           <span class="section-label">Reģistrācija</span>
           <h2>Piesakiet ģimeni iepriekš</h2>
-          <p><strong>Iepriekšēja reģistrācija iespējama līdz 15. augustam.</strong> Tā palīdzēs organizatoriem sagatavot aktivitāšu kartes, zīmogus un plānot apmeklētāju skaitu. <strong>Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas.</strong></p>
+          <p><strong>Iepriekšēja reģistrācija iespējama līdz 15. augustam, lai iegūtu personalizētu aktivitāšu karti.</strong> <strong>Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas.</strong></p>
           <div class="form-intro-badge">Aizpildiet pieteikuma formu zemāk</div>
           <div class="custom-form-card">
             <form id="familyRegistrationForm" class="family-form" action="https://script.google.com/macros/s/AKfycbxFtZrMEgK9_B-xh4XpjXexUlBgRDSMigatcYA2XWigpNODxs3Y58mFv2AC5QNIeNewSg/exec" method="POST" target="hiddenSubmitFrame">

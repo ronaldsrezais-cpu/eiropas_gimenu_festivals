@@ -1892,3 +1892,114 @@ h3 { font-size: 24px; letter-spacing: -0.015em; }
     font-size: 16px !important;
   }
 }
+
+
+/* ===== Final tighter spacing pass ===== */
+
+@media (min-width: 981px) {
+  .section-pad {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .hero.section-pad {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .hero {
+    min-height: 600px !important;
+  }
+
+  .hero-content {
+    padding-top: 64px !important;
+  }
+
+  .countdown-strip {
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .programme {
+    padding-top: 34px !important;
+  }
+
+  .activity-zone {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .map-section {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .registration.section-pad {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .practical {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .section-heading {
+    margin-bottom: 18px !important;
+  }
+
+  .section-heading.compact {
+    margin-bottom: 16px !important;
+  }
+
+  .programme-heading {
+    margin-bottom: 14px !important;
+  }
+
+  .timeline {
+    gap: 8px !important;
+  }
+
+  .activity-list {
+    gap: 8px !important;
+  }
+
+  .map-embed,
+  .map-embed iframe {
+    min-height: 330px !important;
+  }
+
+  .registration-card {
+    padding: 24px !important;
+    gap: 24px !important;
+  }
+
+  .registration-card h2 {
+    margin: 8px 0 10px !important;
+  }
+
+  .custom-form-card {
+    padding: 20px !important;
+  }
+
+  .registration-side {
+    padding: 20px !important;
+  }
+
+  .site-footer {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .section-pad {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .registration.section-pad {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+}
