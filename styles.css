@@ -845,3 +845,43 @@ h3 { font-size: 24px; letter-spacing: -0.015em; }
   .partner-logo--crest { width: 58px; height: 58px; }
   .support-text { font-size: 18px; }
 }
+
+
+/* IZM full logo correction */
+.partner-item--support {
+  align-items: flex-start;
+}
+
+.partner-logo--izm-full {
+  max-width: 240px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.support-wrap,
+.support-text,
+.partner-logo--crest {
+  display: none;
+}
+
+
+/* Final header/footer clean-up */
+.social-link.youtube {
+  border-radius: 12px;
+  background: #FF0000;
+}
+.social-link.youtube svg {
+  width: 20px;
+  height: 20px;
+}
+.social-link.youtube svg path {
+  fill: #ffffff;
+}
+.footer-socials {
+  display: none !important;
+}
