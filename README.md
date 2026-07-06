@@ -30,3 +30,10 @@ If the GitHub repository still contains old files such as `index.html`, `styles.
 ## Apps Script
 
 The Apps Script code is kept in `apps-script/Code.gs` for reference. If the Google Web App is redeployed later, update the form `action` URL in `app/page.js`.
+
+
+## Latest layout update
+
+- The standalone "Aktivitāšu karte" section has been removed.
+- The activity-card / stamp explanation now appears as a compact side panel next to the registration form.
+- The "Uz tikšanos / Sazināties" CTA panel has been removed.

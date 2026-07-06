@@ -230,38 +230,30 @@ const pageHtml = `<header class="site-header" id="top">
             <iframe name="hiddenSubmitFrame" class="hidden-submit-frame" title="Formas iesniegšana"></iframe>
           </div>
         </div>
-      </div>
-    </section>
 
-<section class="section-pad card-system" id="karte-princips">
-      <div class="two-col centered">
-        <div>
+        <aside class="registration-side" aria-label="Aktivitāšu kartes princips">
           <span class="section-label">Aktivitāšu karte</span>
-          <h2>Krāj zīmogus aktivitāšu kartē</h2>
-        </div>
-        <div class="text-stack">
-          <p>Pie reģistrācijas katra ģimene saņems savu aktivitāšu karti. Kartē būs redzamas festivāla aktivitātes, un pēc katras paveiktās aktivitātes ģimene saņems zīmogu.</p>
-          <p>Karte palīdzēs viegli sekot līdzi, cik daudz aktivitāšu jau izmēģinātas, un padarīs dienu vēl aizraujošāku bērniem un pieaugušajiem.</p>
-          <p>Par dažādu daudzumu izpildītām aktivitātēm ģimenēm būs iespēja saņemt balvas.</p>
-        </div>
-      </div>
+          <h3>Krāj zīmogus aktivitāšu kartē</h3>
+          <p>Pie reģistrācijas katra ģimene saņems aktivitāšu karti ar festivāla stacijām. Pēc paveiktām aktivitātēm ģimene krās zīmogus, un par dažādu daudzumu izpildītām aktivitātēm būs iespēja saņemt balvas.</p>
 
-      <div class="stamp-grid" aria-label="Aktivitāšu kartes princips">
-        <article>
-          <strong>1.</strong>
-          <span>Saņem karti</span>
-          <p>Reģistrācijas punktā ģimene saņem aktivitāšu karti ar festivāla stacijām.</p>
-        </article>
-        <article>
-          <strong>2.</strong>
-          <span>Krāj zīmogus</span>
-          <p>Pēc katras paveiktās aktivitātes ģimene saņem zīmogu savā kartē.</p>
-        </article>
-        <article>
-          <strong>3.</strong>
-          <span>Balvu iespēja</span>
-          <p>Balvas būs iespējams saņemt par dažādu daudzumu izpildītām aktivitātēm.</p>
-        </article>
+          <div class="stamp-mini-grid">
+            <article>
+              <strong>1.</strong>
+              <span>Saņem karti</span>
+              <p>Reģistrācijas punktā ģimene saņem savu aktivitāšu karti.</p>
+            </article>
+            <article>
+              <strong>2.</strong>
+              <span>Krāj zīmogus</span>
+              <p>Pēc katras paveiktās aktivitātes ģimene saņem zīmogu.</p>
+            </article>
+            <article>
+              <strong>3.</strong>
+              <span>Balvu iespēja</span>
+              <p>Sakrājot zīmogus, ģimene varēs saņemt balvas.</p>
+            </article>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -297,15 +289,6 @@ const pageHtml = `<header class="site-header" id="top">
           <p>Ērtu apģērbu, ūdens pudeli un laikapstākļiem piemērotas lietas. Pārējais — labs noskaņojums.</p>
         </div>
       </div>
-    </section>
-
-    <section class="cta-panel" id="jaunumi">
-      <div>
-        <span class="section-label light">Uz tikšanos!</span>
-        <h2>Atnāciet, izmēģiniet un pavadiet aktīvu dienu kopā</h2>
-        <p>Iepriekšēja reģistrācija iespējama līdz 15. augustam, bet pieteikties varēs arī pasākuma dienā uz vietas. Pašlaik plānots, ka ierašanās sāksies no plkst. 10.30, aktivitātes norisināsies no 11.00 līdz 17.00, bet noslēgums — plkst. 17.30.</p>
-      </div>
-      <a class="button primary inverted" href="mailto:info@lsfp.lv">Sazināties</a>
     </section>
   </main>
 
