@@ -1,350 +1,76 @@
-<!doctype html>
-<html lang="lv">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eiropas Ģimeņu festivāls | Home & Heart</title>
-  <meta name="description" content="Eiropas Ģimeņu festivāls Rīgā – bezmaksas aktivitāšu diena ģimenēm Uzvaras parkā 2026. gada 22. augustā." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header" id="top">
-    <a class="brand logo-brand" href="#top" aria-label="Home & Heart sākumlapa">
-      <img src="https://familyactivityhub.com/visuals/home-heart-logo.png" alt="Home & Heart European Family Festival logo" />
-    </a>
+const target = new Date('2026-08-22T00:00:00+03:00').getTime();
+const fields = {
+  days: document.getElementById('days'),
+  hours: document.getElementById('hours'),
+  minutes: document.getElementById('minutes'),
+  seconds: document.getElementById('seconds')
+};
 
-    <nav class="main-nav" aria-label="Galvenā navigācija">
-      <a href="#par-festivalu">Par festivālu</a>
-      <a href="#programma">Programma</a>
-      <a href="#aktivitates">Aktivitātes</a>
-      <a href="#karte">Pasākuma karte</a>
-    </nav>
+function pad(value) {
+  return String(value).padStart(2, '0');
+}
 
-    <div class="header-actions">
-      <div class="social-icons header-socials" aria-label="Sociālie tīkli">
-        <a class="social-link facebook" href="https://www.facebook.com/lsfp.lv/" target="_blank" rel="noreferrer" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.55 17.52 2.07 12 2.07S2 6.55 2 12.07c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.84c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.19 2.23.19v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.89h-2.34v6.99C18.34 21.2 22 17.06 22 12.07z"/></svg>
-        </a>
-        <a class="social-link instagram" href="https://www.instagram.com/lsfp.lv/" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17.4" cy="6.7" r="1.3" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a class="social-link linkedin" href="https://www.linkedin.com/company/latvian-sports-federations-council" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 7.06a1.96 1.96 0 1 0 0-3.92 1.96 1.96 0 0 0 0 3.92zM20 20h-3.37v-5.59c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95V20H9.27V8.5h3.11v1.57h.04c.43-.82 1.49-1.74 3.06-1.74 3.28 0 3.89 2.16 3.89 4.97V20z"/></svg>
-        </a>
-        <a class="social-link youtube" href="https://www.youtube.com/@LatvijasSportafeder%C4%81cijupadome" target="_blank" rel="noreferrer" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.5v9l8-4.5-8-4.5z"/></svg>
-        </a>
-      </div>
-      <a class="nav-cta" href="#registracija">Pieteikt ģimeni</a>
-    </div>
-    <button class="menu-button" aria-label="Atvērt izvēlni" aria-expanded="false">☰</button>
-  </header>
+function tick() {
+  const distance = Math.max(0, target - Date.now());
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
 
-  <main>
-    <section class="hero section-pad" id="par-festivalu">
-      <div class="shape shape-yellow"></div>
-      <div class="shape shape-blue"></div>
-      <div class="shape shape-green"></div>
+  fields.days.textContent = pad(days);
+  fields.hours.textContent = pad(hours);
+  fields.minutes.textContent = pad(minutes);
+  fields.seconds.textContent = pad(seconds);
+}
 
-      <div class="hero-content">
-        <h1>Eiropas Ģimeņu festivāls</h1>
-        <div class="hero-text-block">
-          <p>Festivālā ģimenes varēs brīvi izmēģināt dažādus sporta veidus, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā.</p>
-          <p>Dalība ir bez maksas, un aktivitātes būs piemērotas dažādiem vecumiem un sagatavotības līmeņiem.</p>
-          <p>Ģimenes saņems aktivitāšu kartes, kurās varēs krāt zīmogus, sekot līdzi izmēģinātajām stacijām un, sakrājot zīmogus, saņemt balvas.</p>
-        </div>
-        <div class="hero-actions">
-          <a class="button primary" href="#registracija">Pieteikt ģimeni</a>
-          <a class="button secondary" href="#aktivitates">Skatīt aktivitātes</a>
-        </div>
-      </div>
+tick();
+setInterval(tick, 1000);
 
-      <aside class="hero-card" aria-label="Festivāla īsā informācija">
-        <div class="date-card">
-          <span class="date-day">22.</span>
-          <span class="date-month">augusts</span>
-          <span class="date-year">2026</span>
-        </div>
-        <div class="quick-facts">
-          <div><strong>Vieta</strong><span>Uzvaras parks, Rīga</span></div>
-          <div><strong>Laiks</strong><span>10.30–17.30</span></div>
-          <div><strong>Dalība</strong><span>bez maksas</span></div>
-        </div>
-      </aside>
-    </section>
+const header = document.querySelector('.site-header');
+const menuButton = document.querySelector('.menu-button');
+menuButton?.addEventListener('click', () => {
+  const isOpen = header.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+});
 
-    <section class="countdown-strip" aria-label="Laika atskaite līdz festivālam">
-      <div class="countdown-item"><strong id="days">00</strong><span>dienas</span></div>
-      <div class="countdown-item"><strong id="hours">00</strong><span>stundas</span></div>
-      <div class="countdown-item"><strong id="minutes">00</strong><span>minūtes</span></div>
-      <div class="countdown-item"><strong id="seconds">00</strong><span>sekundes</span></div>
-    </section>
+document.querySelectorAll('.main-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    header.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+  });
+});
 
-<section class="section-pad programme" id="programma">
-      <div class="section-heading programme-heading compact">
-        <span class="section-label">Programma</span>
-      </div>
 
-      <div class="timeline">
-        <article>
-          <time>No 10.30</time>
-          <div>
-            <h3>Ierašanās, reģistrācija un aktivitāšu kartes saņemšana</h3>
-            <p>Ģimenes ierodas reģistrācijas punktā, nosauc savu ģimenes nosaukumu un saņem aktivitāšu karti.</p>
-          </div>
-        </article>
-        <article>
-          <time>11.00–17.00</time>
-          <div>
-            <h3>Aktivitāšu stacijas visā festivāla teritorijā</h3>
-            <p>Ģimenes pašas izvēlas, kuras aktivitātes apmeklēt un kādā secībā tās izmēģināt.</p>
-          </div>
-        </article>
-        <article>
-          <time>11.00–17.00</time>
-          <div>
-            <h3>Zīmogi un balvu iespēja</h3>
-            <p>Ģimenes krās zīmogus aktivitāšu kartē, un par dažādu daudzumu izpildītām aktivitātēm būs iespēja saņemt balvas.</p>
-          </div>
-        </article>
-        <article>
-          <time>17.30</time>
-          <div>
-            <h3>Festivāla noslēgums</h3>
-            <p>Kopīgs dienas noslēgums ar pateicību dalībniekiem un svētku sajūtas noslēgšanu.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+// Custom family registration form helper
+const familyForm = document.getElementById("familyRegistrationForm");
+const formStatus = document.getElementById("formStatus");
 
-<section class="section-pad activity-zone" id="aktivitates">
-      <div class="section-heading compact wide-heading">
-        <span class="section-label">Aktivitātes</span>
-        <h2>Ko varēs izmēģināt?</h2>
-        <p>Aktivitāšu saraksts vēl var tikt papildināts. Visas aktivitātes būs veidotas tā, lai tās varētu izmēģināt draudzīgā un drošā vidē.</p>
-      </div>
+if (familyForm && formStatus) {
+  familyForm.addEventListener("submit", function (event) {
+    const action = familyForm.getAttribute("action") || "";
+    const selectedAgeGroups = familyForm.querySelectorAll('input[name="childrenAgeGroups"]:checked');
 
-      <div class="activity-list">
-        <article class="activity-card"><span>Ielu Vingrotāji</span><h3>Spēka izaicinājums visai ģimenei</h3><p>Izmēģiniet pietupienus, atspiedienus, karāšanos pie stieņa un citus ielu vingrošanas elementus savā tempā.</p></article>
-        <article class="activity-card"><span>Vieglatlētika</span><h3>Skrien, lec, met!</h3><p>Ģimenēm draudzīga vieglatlētikas daudzcīņa ar skriešanas, lēkšanas un mešanas uzdevumiem.</p></article>
-        <article class="activity-card"><span>Kamaniņu sports</span><h3>Ātrums kā trasē</h3><p>Iepazīstiet kamaniņu sportu, starta kustības, rollerkamanas un treniņu ierīces, ko izmanto sportisti.</p></article>
-        <article class="activity-card"><span>Alpīnisms</span><h3>Uzkāp līdz virsotnei</h3><p>Izmēģiniet kāpšanas sienu un pārbaudiet drosmi, veiklību un spēju tikt līdz pašai augšai.</p></article>
-        <article class="activity-card"><span>Modernā pieccīņa un šķēršļu skriešana</span><h3>Šķēršļu un precizitātes misija</h3><p>Pārvariet šķēršļus un izmēģiniet lāzeršaušanu aktivitātē, kur apvienojas kustība un koncentrēšanās.</p></article>
-        <article class="activity-card"><span>Loka šaušana</span><h3>Bultu pavēlnieks</h3><p>Apgūstiet loka šaušanas pamatus un noskaidrojiet, cik precīzi varat trāpīt mērķī.</p></article>
-        <article class="activity-card"><span>Novuss</span><h3>Novusa meistara galds</h3><p>Izmēģiniet novusu uz profesionāliem galdiem, apgūstiet sitiena tehniku un uzspēlējiet kopā ar ģimeni.</p></article>
-        <article class="activity-card"><span>Motosports</span><h3>Moto līdzsvara izaicinājums</h3><p>Iepazīstiet moto triālu, ekipējumu un līdzsvara uzdevumus. Bērniem būs iespēja izmēģināt elektromotociklus instruktoru uzraudzībā.</p></article>
-        <article class="activity-card"><span>Peldēšana</span><h3>Ūdens drošības un sporta zona</h3><p>Izmēģiniet peldēšanas trenažieri, metiet ūdenspolo bumbu vārtos un piedalieties viktorīnā par drošību pie ūdens.</p></article>
-        <article class="activity-card"><span>Latvijas Paralimpiskā komiteja</span><h3>Sajūti parasportu</h3><p>Iepazīstiet šoudaunu — parasporta spēli, kur īpaši svarīga ir dzirde, koncentrēšanās un precizitāte.</p></article>
-        <article class="activity-card"><span>Galda teniss</span><h3>Galda tenisa robots</h3><p>Pārbaudiet reakciju un precizitāti, spēlējot ar galda tenisa robotu un trāpot mērķa zonā.</p></article>
-        <article class="activity-card"><span>Krosmintons</span><h3>Ātrā saspēle gaisā</h3><p>Izmēģiniet dinamisku rakešu spēli, kur galvenais ir kustība, precizitāte un laba saspēle.</p></article>
-        <article class="activity-card"><span>Šaušana</span><h3>Precīzais mērķis</h3><p>Iepazīstiet šaušanas sporta pamatus drošā un kontrolētā vidē, koncentrējoties uz mērķēšanu un mieru.</p></article>
-        <article class="activity-card"><span>Burāšana</span><h3>Burāšanas piedzīvojums krastā</h3><p>Apskatiet burāšanas inventāru, iemācieties mezglus un uzziniet, kā vējš un zināšanas palīdz vadīt laivu.</p></article>
-        <article class="activity-card"><span>Kērlings</span><h3>Akmens līdz centram</h3><p>Izmēģiniet grīdas kērlingu un mēģiniet nogādāt akmeni pēc iespējas tuvāk mērķa centram.</p></article>
-        <article class="activity-card"><span>Sporta joga</span><h3>Jogas līdzsvara mirklis</h3><p>Iepazīstiet sporta jogu ar vienkāršām pozām un līdzsvara elementiem dažādiem vecumiem.</p></article>
-        <article class="activity-card"><span>Džiu-džitsu</span><h3>Džiu-džitsu kustību laukums</h3><p>Vērojiet paraugdemonstrējumus, iepazīstiet pamata kustības un uzziniet vairāk par šo cīņas sporta veidu.</p></article>
-        <article class="activity-card"><span>Kendo</span><h3>Samuraja ceļš</h3><p>Izmēģiniet kendo pamatsitienus un iepazīstiet tradicionālo treniņu un cīņas ekipējumu.</p></article>
-        <article class="activity-card"><span>Frisbijs</span><h3>Lidojošā diska izaicinājums</h3><p>Metiet disku tālumā vai precizitātē un pārbaudiet, cik labi varat kontrolēt tā lidojumu.</p></article>
-        <article class="activity-card"><span>Disku golfs</span><h3>Disku golfa precizitāte</h3><p>Metiet disku mērķī no dažādām distancēm, krājiet punktus un uzziniet vairāk par disku golfu.</p></article>
-        <article class="activity-card"><span>Handbols</span><h3>Metiens vārtos!</h3><p>Izmēģiniet handbola metienus, stafetes elementus un pārbaudiet spēku, precizitāti un veiklību.</p></article>
-        <article class="activity-card"><span>Darts</span><h3>Trāpi desmitniekā</h3><p>Apgūstiet šautriņu mešanas pamatus un pārbaudiet precizitāti draudzīgā punktu izaicinājumā.</p></article>
-        <article class="activity-card"><span>Boulings</span><h3>Ķegļu medības</h3><p>Metiet boulinga bumbu, gāziet ķegļus un piedalieties īsā viktorīnā par boulingu.</p></article>
-        <article class="activity-card"><span>Sporta cīņa</span><h3>Cīņas sporta ātrais kurss</h3><p>Iepazīstiet brīvās cīņas pamatus treneru un sportistu vadībā.</p></article>
-        <article class="activity-card"><span>Riteņbraukšana</span><h3>Virtuālais velo kilometrs</h3><p>Sēdieties uz velotrenažiera un veiciet 1 km braucienu Zwift virtuālajā riteņbraukšanas vidē.</p></article>
-        <article class="activity-card"><span>Bridžs</span><h3>Mazais bridža galds</h3><p>Iepazīstiet bērniem draudzīgu kāršu spēli, kas attīsta domāšanu, rēķināšanu un stratēģiju.</p></article>
-        <article class="activity-card"><span>Florbols</span><h3>Florbola ātrums un precizitāte</h3><p>Metiet pa vārtiem, pārbaudiet metiena ātrumu un izpildiet veiklības uzdevumus kopā ar ģimeni.</p></article>
-        <article class="activity-card"><span>Sērfošana un SUP</span><h3>SUP piedzīvojums uz ūdens</h3><p>Iepazīstiet SUP airēšanu un svarīgākos drošības principus, atrodoties uz ūdens.</p></article>
-      </div>
-    </section>
+    if (selectedAgeGroups.length === 0) {
+      event.preventDefault();
+      formStatus.textContent = "Lūdzu, izvēlieties vismaz vienu bērnu vecuma grupu.";
+      formStatus.style.color = "#d84d39";
+      return;
+    }
 
-<section class="section-pad map-section" id="karte">
-      <div class="map-copy">
-        <span class="section-label">Pasākuma karte</span>
-        <h2>Festivāls notiks Uzvaras parkā</h2>
-        <p>Precīzs aktivitāšu zonu izvietojums tiks pievienots tuvāk pasākumam. Pagaidām šeit ir norāde uz festivāla norises vietu.</p>
-        <a class="button secondary" href="https://maps.google.com/?q=Uzvaras+parks+Riga" target="_blank" rel="noreferrer">Atvērt Google Maps</a>
-      </div>
-      <div class="map-embed" aria-label="Uzvaras parks Google Maps kartē">
-        <iframe
-          title="Uzvaras parks, Rīga"
-          src="https://maps.google.com/maps?q=Uzvaras%20parks%2C%20R%C4%ABga%2C%20Latvija&z=15&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
+    if (action.includes("PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE")) {
+      event.preventDefault();
+      formStatus.textContent = "Forma vēl nav pieslēgta Google Sheets. Lūdzu, ievietojiet Google Apps Script Web App URL.";
+      formStatus.style.color = "#d84d39";
+      return;
+    }
 
-<section class="section-pad registration" id="registracija">
-      <div class="registration-card">
-        <div>
-          <span class="section-label">Reģistrācija</span>
-          <h2>Piesakiet ģimeni iepriekš</h2>
-          <p>Iepriekšēja reģistrācija iespējama līdz 15. augustam. Tā palīdzēs organizatoriem sagatavot aktivitāšu kartes, zīmogus un plānot apmeklētāju skaitu. Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas.</p>
-          <div class="form-intro-badge">Aizpildiet pieteikuma formu zemāk</div>
-          <div class="custom-form-card">
-            <form id="familyRegistrationForm" class="family-form" action="PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE" method="POST" target="hiddenSubmitFrame">
-              <input type="hidden" name="source" value="Eiropas Ģimeņu festivāls 2026" />
+    formStatus.textContent = "Pieteikums tiek nosūtīts…";
+    formStatus.style.color = "#1597c4";
 
-              <div class="form-grid">
-                <label class="form-field form-field-wide">
-                  <span>Ģimenes nosaukums aktivitāšu kartei <em>*</em></span>
-                  <input type="text" name="familyName" placeholder="Piemēram, Ozoliņu ģimene" required />
-                </label>
-
-                <label class="form-field">
-                  <span>Kontaktpersonas vārds un uzvārds <em>*</em></span>
-                  <input type="text" name="contactName" required />
-                </label>
-
-                <label class="form-field">
-                  <span>Kontaktpersonas e-pasts <em>*</em></span>
-                  <input type="email" name="contactEmail" required />
-                </label>
-
-                <label class="form-field">
-                  <span>Cik pieaugušie plāno ierasties? <em>*</em></span>
-                  <input type="number" name="adultsCount" min="0" step="1" required />
-                </label>
-
-                <label class="form-field">
-                  <span>Cik bērni plāno ierasties? <em>*</em></span>
-                  <input type="number" name="childrenCount" min="0" step="1" required />
-                </label>
-              </div>
-
-              <fieldset class="form-fieldset">
-                <legend>Bērnu vecuma grupas <em>*</em></legend>
-                <div class="checkbox-grid">
-                  <label><input type="checkbox" name="childrenAgeGroups" value="0–5 gadi" /> <span>0–5 gadi</span></label>
-                  <label><input type="checkbox" name="childrenAgeGroups" value="6–9 gadi" /> <span>6–9 gadi</span></label>
-                  <label><input type="checkbox" name="childrenAgeGroups" value="10–13 gadi" /> <span>10–13 gadi</span></label>
-                  <label><input type="checkbox" name="childrenAgeGroups" value="14–17 gadi" /> <span>14–17 gadi</span></label>
-                </div>
-              </fieldset>
-
-              <label class="form-field form-field-wide">
-                <span>Īpašas vajadzības vai piekļūstamības piezīmes</span>
-                <textarea name="accessibilityNotes" rows="4" placeholder="Piemēram, pārvietošanās grūtības, nepieciešama piekļūstama vide vai cita būtiska informācija."></textarea>
-              </label>
-
-              <label class="consent-check">
-                <input type="checkbox" name="dataConsent" value="Jā" required />
-                <span>Piekrītu, ka iesniegtā informācija tiek izmantota Eiropas Ģimeņu festivāla organizatoriskajām vajadzībām. <em>*</em></span>
-              </label>
-
-              <div class="form-submit-row">
-                <button class="button primary" type="submit">Nosūtīt pieteikumu</button>
-                <p id="formStatus" class="form-status" aria-live="polite"></p>
-              </div>
-            </form>
-            <iframe name="hiddenSubmitFrame" class="hidden-submit-frame" title="Formas iesniegšana"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<section class="section-pad card-system" id="karte-princips">
-      <div class="two-col centered">
-        <div>
-          <span class="section-label">Aktivitāšu karte</span>
-          <h2>Krāj zīmogus aktivitāšu kartē</h2>
-        </div>
-        <div class="text-stack">
-          <p>Pie reģistrācijas katra ģimene saņems savu aktivitāšu karti. Kartē būs redzamas festivāla aktivitātes, un pēc katras paveiktās aktivitātes ģimene saņems zīmogu.</p>
-          <p>Karte palīdzēs viegli sekot līdzi, cik daudz aktivitāšu jau izmēģinātas, un padarīs dienu vēl aizraujošāku bērniem un pieaugušajiem.</p>
-          <p>Par dažādu daudzumu izpildītām aktivitātēm ģimenēm būs iespēja saņemt balvas.</p>
-        </div>
-      </div>
-
-      <div class="stamp-grid" aria-label="Aktivitāšu kartes princips">
-        <article>
-          <strong>1.</strong>
-          <span>Saņem karti</span>
-          <p>Reģistrācijas punktā ģimene saņem aktivitāšu karti ar festivāla stacijām.</p>
-        </article>
-        <article>
-          <strong>2.</strong>
-          <span>Krāj zīmogus</span>
-          <p>Pēc katras paveiktās aktivitātes ģimene saņem zīmogu savā kartē.</p>
-        </article>
-        <article>
-          <strong>3.</strong>
-          <span>Balvu iespēja</span>
-          <p>Balvas būs iespējams saņemt par dažādu daudzumu izpildītām aktivitātēm.</p>
-        </article>
-      </div>
-    </section>
-
-    
-
-    
-
-    
-
-    
-
-    <section class="section-pad practical" id="praktiski">
-      <div class="section-heading compact">
-        <span class="section-label">Praktiski</span>
-        <h2>Pirms došanās uz festivālu</h2>
-      </div>
-
-      <div class="info-list">
-        <div>
-          <h3>Kam festivāls paredzēts?</h3>
-          <p>Ģimenēm ar bērniem, jauniešiem, vecākiem, vecvecākiem un ikvienam, kurš vēlas aktīvi pavadīt dienu ārā.</p>
-        </div>
-        <div>
-          <h3>Vai nepieciešama sagatavotība?</h3>
-          <p>Nē. Aktivitātes būs piemērotas dažādiem vecumiem un dažādiem fiziskās sagatavotības līmeņiem.</p>
-        </div>
-        <div>
-          <h3>Vai dalība ir bez maksas?</h3>
-          <p>Jā. Festivāla apmeklējums un aktivitātes apmeklētājiem paredzētas bez maksas.</p>
-        </div>
-        <div>
-          <h3>Ko ņemt līdzi?</h3>
-          <p>Ērtu apģērbu, ūdens pudeli un laikapstākļiem piemērotas lietas. Pārējais — labs noskaņojums.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-panel" id="jaunumi">
-      <div>
-        <span class="section-label light">Uz tikšanos!</span>
-        <h2>Atnāciet, izmēģiniet un pavadiet aktīvu dienu kopā</h2>
-        <p>Iepriekšēja reģistrācija iespējama līdz 15. augustam, bet pieteikties varēs arī pasākuma dienā uz vietas. Pašlaik plānots, ka ierašanās sāksies no plkst. 10.30, aktivitātes norisināsies no 11.00 līdz 17.00, bet noslēgums — plkst. 17.30.</p>
-      </div>
-      <a class="button primary inverted" href="mailto:info@lsfp.lv">Sazināties</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div>
-        <strong>Home & Heart</strong>
-        <p>Eiropas Ģimeņu festivāls · Uzvaras parks, Rīga · 22. augusts 2026</p>
-      </div>
-</div>
-
-    <div class="footer-partners" aria-label="Festivāla koordinētāji un atbalstītāji">
-      <div class="partner-item">
-        <span class="partner-label">Koordinē</span>
-        <img class="partner-logo partner-logo--lsfp" src="assets/logos/lsfp-logo-new.png" alt="Latvijas Sporta federāciju padome" />
-      </div>
-      <div class="partner-item partner-item--support">
-        <span class="partner-label">Atbalsta</span>
-        <img class="partner-logo partner-logo--izm-full" src="assets/logos/izm-footer-white.png" alt="Izglītības un zinātnes ministrija" />
-      </div>
-    </div>
-
-    <div class="eu-note eu-disclaimer">
-      <img class="eu-logo" src="assets/logos/eu-finanse.png" alt="Līdzfinansē Eiropas Savienība" />
-      <p>Finansē Eiropas Savienība. Tomēr paustie uzskati un viedokļi ir tikai autora(-u) uzskati un viedokļi, un tie ne vienmēr atspoguļo Eiropas Savienības vai Eiropas Izglītības un kultūras izpildaģentūras (EACEA) viedokli. Ne Eiropas Savienība, ne EACEA par tiem neatbild.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    window.setTimeout(function () {
+      formStatus.textContent = "Paldies! Pieteikums ir nosūtīts.";
+      formStatus.style.color = "#22b86f";
+      familyForm.reset();
+    }, 1100);
+  });
+}
