@@ -522,3 +522,128 @@ h3 { font-size: 24px; letter-spacing: -0.015em; }
   .partner-card { grid-template-columns: 1fr; align-items: start; }
   .partner-card img { max-width: 360px; }
 }
+
+/* Final polish: header social icons, transparent logos and compact activity cards */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: lowercase;
+  transition: transform .18s ease, background .18s ease;
+}
+
+.social-icons a:hover { transform: translateY(-2px); }
+.header-socials a {
+  background: rgba(255,255,255,.78);
+  color: var(--ink);
+  box-shadow: 0 10px 22px rgba(38, 51, 59, .08);
+}
+.footer-socials {
+  justify-content: flex-end;
+}
+.footer-socials a {
+  background: rgba(255,255,255,.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,.12);
+}
+.social-icons a span { transform: translateY(-1px); }
+.social-icons a[aria-label="YouTube"] span { font-size: 14px; transform: translateX(1px); }
+.social-icons a[aria-label="Instagram"] span,
+.social-icons a[aria-label="LinkedIn"] span { font-size: 12px; letter-spacing: -.03em; }
+
+.partner-card {
+  background: rgba(255,255,255,.11);
+}
+.partner-logo--transparent,
+.partner-logo--panel,
+.eu-disclaimer img {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+.partner-logo--transparent { max-width: 320px; max-height: 68px; }
+.partner-logo--panel { max-width: 230px; max-height: 96px; }
+.eu-disclaimer img { max-width: 310px; }
+
+.activity-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.activity-card {
+  border-radius: 22px;
+  padding: 18px;
+  min-height: 205px;
+}
+.activity-card::before {
+  right: -50px;
+  top: -50px;
+  width: 104px;
+  height: 104px;
+}
+.activity-card span {
+  min-height: 28px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.activity-card h3 {
+  margin-top: 13px;
+  font-size: 21px;
+  line-height: 1.08;
+}
+.activity-card p {
+  font-size: 15.5px;
+  line-height: 1.48;
+}
+
+@media (max-width: 1260px) {
+  .activity-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .main-nav { gap: 14px; font-size: 14px; }
+  .logo-brand { min-width: 154px; }
+  .logo-brand img { width: 154px; }
+}
+
+@media (max-width: 1080px) {
+  .activity-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .header-socials { display: none; }
+}
+
+@media (max-width: 980px) {
+  .header-actions { display: none; }
+  .site-header.open .header-actions {
+    display: flex;
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    top: 330px;
+    background: white;
+    padding: 14px 18px 18px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: var(--shadow);
+  }
+}
+
+@media (max-width: 760px) {
+  .activity-list { grid-template-columns: 1fr; }
+  .footer-socials { justify-content: flex-start; }
+  .partner-logo--transparent { max-width: 280px; }
+  .partner-logo--panel { max-width: 210px; }
+}
