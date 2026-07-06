@@ -153,7 +153,7 @@ const pageHtml = `<header class="site-header" id="top">
       <div class="map-copy">
         <span class="section-label">Pasākuma karte</span>
         <h2>Festivāls notiks Uzvaras parkā</h2>
-        <p>Precīzs aktivitāšu zonu izvietojums tiks pievienots tuvāk pasākumam. Pagaidām šeit ir norāde uz festivāla norises vietu.</p>
+        <p>Precīzs aktivitāšu zonu izvietojums tiks pievienots tuvāk pasākumam.</p>
         <a class="button secondary" href="https://maps.google.com/?q=Uzvaras+parks+Riga" target="_blank" rel="noreferrer">Atvērt Google Maps</a>
       </div>
       <div class="map-embed" aria-label="Uzvaras parks Google Maps kartē">
@@ -299,7 +299,13 @@ const pageHtml = `<header class="site-header" id="top">
         <strong>Home & Heart</strong>
         <p>Eiropas Ģimeņu festivāls · Uzvaras parks, Rīga · 22. augusts 2026</p>
       </div>
-</div>
+      <div class="footer-contacts" aria-label="Kontaktinformācija">
+        <strong>Kontakti</strong>
+        <a href="mailto:lsfp@lsfp.lv">lsfp@lsfp.lv</a>
+        <a href="https://lsfp.lv/" target="_blank" rel="noreferrer">lsfp.lv</a>
+        <span>Tālrunis: +371 68622302</span>
+      </div>
+    </div>
 
     <div class="footer-partners" aria-label="Festivāla koordinētāji un atbalstītāji">
       <div class="partner-item">
