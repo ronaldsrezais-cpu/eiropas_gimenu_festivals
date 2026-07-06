@@ -37,6 +37,7 @@ const pageHtml = `<header class="site-header" id="top">
       <div class="shape shape-yellow"></div>
       <div class="shape shape-blue"></div>
       <div class="shape shape-green"></div>
+      <div class="hero-watermark" aria-hidden="true"><img src="https://familyactivityhub.com/visuals/home-heart-logo.png" alt="" /></div>
 
       <div class="hero-content">
         <h1>Eiropas Ģimeņu festivāls</h1>
@@ -169,7 +170,7 @@ const pageHtml = `<header class="site-header" id="top">
         <div>
           <span class="section-label">Reģistrācija</span>
           <h2>Piesakiet ģimeni iepriekš</h2>
-          <p>Iepriekšēja reģistrācija iespējama līdz 15. augustam. Tā palīdzēs organizatoriem sagatavot aktivitāšu kartes, zīmogus un plānot apmeklētāju skaitu. Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas.</p>
+          <p><strong>Iepriekšēja reģistrācija iespējama līdz 15. augustam.</strong> Tā palīdzēs organizatoriem sagatavot aktivitāšu kartes, zīmogus un plānot apmeklētāju skaitu. <strong>Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas.</strong></p>
           <div class="form-intro-badge">Aizpildiet pieteikuma formu zemāk</div>
           <div class="custom-form-card">
             <form id="familyRegistrationForm" class="family-form" action="https://script.google.com/macros/s/AKfycbxFtZrMEgK9_B-xh4XpjXexUlBgRDSMigatcYA2XWigpNODxs3Y58mFv2AC5QNIeNewSg/exec" method="POST" target="hiddenSubmitFrame">
@@ -234,7 +235,7 @@ const pageHtml = `<header class="site-header" id="top">
         <aside class="registration-side" aria-label="Aktivitāšu kartes princips">
           <span class="section-label">Aktivitāšu karte</span>
           <h3>Krāj zīmogus aktivitāšu kartē</h3>
-          <p>Pie reģistrācijas katra ģimene saņems aktivitāšu karti ar festivāla stacijām. Pēc paveiktām aktivitātēm ģimene krās zīmogus, un par dažādu daudzumu izpildītām aktivitātēm būs iespēja saņemt balvas.</p>
+          <p>Pasākuma dienā pie reģistrācijas telts katra ģimene saņems savu aktivitāšu karti. Kartē būs redzamas festivāla aktivitātes, un pēc katras paveiktās aktivitātes ģimene saņems zīmogu.<br><br>Karte palīdzēs viegli sekot līdzi, cik daudz aktivitāšu jau izmēģinātas, un padarīs dienu vēl aizraujošāku bērniem un pieaugušajiem.<br><br>Par dažādu daudzumu izpildītām aktivitātēm ģimenēm būs iespēja saņemt balvas.</p>
 
           <div class="stamp-mini-grid">
             <article>
