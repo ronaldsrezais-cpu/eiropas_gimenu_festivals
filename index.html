@@ -18,11 +18,11 @@
 
     <nav class="main-nav" aria-label="Galvenā navigācija">
       <a href="#par-festivalu">Par festivālu</a>
-      <a href="#karte-princips">Aktivitāšu karte</a>
       <a href="#programma">Programma</a>
       <a href="#aktivitates">Aktivitātes</a>
+      <a href="#karte-princips">Aktivitāšu karte</a>
+      <a href="#karte">Pasākuma karte</a>
       <a href="#registracija">Reģistrācija</a>
-      <a href="#karte">Karte</a>
       <a href="#praktiski">Praktiski</a>
     </nav>
 
@@ -31,14 +31,18 @@
   </header>
 
   <main>
-    <section class="hero section-pad">
+    <section class="hero section-pad" id="par-festivalu">
       <div class="shape shape-yellow"></div>
       <div class="shape shape-blue"></div>
       <div class="shape shape-green"></div>
 
       <div class="hero-content">
         <h1>Eiropas Ģimeņu festivāls</h1>
-        <p class="lead">Bezmaksas festivāls ģimenēm ar daudzveidīgām sporta aktivitātēm, aktivitāšu kartēm, zīmogiem un iespēju saņemt balvas.</p>
+        <div class="hero-text-block">
+          <p>Festivālā ģimenes varēs brīvi izmēģināt dažādus sporta veidus, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā.</p>
+          <p>Dalība ir bez maksas, un aktivitātes būs piemērotas dažādiem vecumiem un sagatavotības līmeņiem.</p>
+          <p>Nav vajadzīga iepriekšēja pieredze — svarīgākais ir vēlme piedalīties un labi pavadīt dienu kopā.</p>
+        </div>
         <div class="hero-actions">
           <a class="button primary" href="#registracija">Pieteikt ģimeni</a>
           <a class="button secondary" href="#aktivitates">Skatīt aktivitātes</a>
@@ -47,7 +51,7 @@
 
       <aside class="hero-card" aria-label="Festivāla īsā informācija">
         <div class="date-card">
-          <span class="date-day">22</span>
+          <span class="date-day">22.</span>
           <span class="date-month">augusts</span>
           <span class="date-year">2026</span>
         </div>
@@ -66,30 +70,9 @@
       <div class="countdown-item"><strong id="seconds">00</strong><span>sekundes</span></div>
     </section>
 
-    <section class="section-pad intro" id="par-festivalu">
-      <div class="two-col">
-        <div>
-          <span class="section-label">Par festivālu</span>
-          <h2>Aktīva un draudzīga diena visai ģimenei</h2>
-        </div>
-        <div class="text-stack">
-          <p>Festivālā ģimenes varēs brīvi izmēģināt dažādus sporta veidus, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā.</p>
-          <p>Dalība ir bez maksas, un aktivitātes būs piemērotas dažādiem vecumiem un sagatavotības līmeņiem.</p>
-          <p>Nav vajadzīga iepriekšēja pieredze — svarīgākais ir vēlme piedalīties un labi pavadīt dienu kopā.</p>
-          <div class="pill-row" aria-label="Festivāla galvenie akcenti">
-            <span>Bezmaksas pasākums</span>
-            <span>Aktivitātes dažādiem vecumiem</span>
-            <span>Ģimenes aktivitāšu karte</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad programme" id="programma">
-      <div class="section-heading">
-        <span class="section-label">Dienas norise</span>
-        <h2>Kā izskatīsies festivāla diena?</h2>
-        <p>Provizoriskais dienas plāns palīdz saprast, kā norisināsies festivāls. Nelielas izmaiņas vēl iespējamas, taču galvenie laiki jau ir zināmi.</p>
+<section class="section-pad programme" id="programma">
+      <div class="section-heading programme-heading compact">
+        <span class="section-label">Programma</span>
       </div>
 
       <div class="timeline">
@@ -133,7 +116,7 @@
         <div class="text-stack">
           <p>Pie reģistrācijas katra ģimene saņems savu aktivitāšu karti. Kartē būs redzamas festivāla aktivitātes, un pēc katras paveiktās aktivitātes ģimene saņems zīmogu.</p>
           <p>Karte palīdzēs viegli sekot līdzi, cik daudz aktivitāšu jau izmēģinātas, un padarīs dienu vēl aizraujošāku bērniem un pieaugušajiem.</p>
-          <p>Par dažādu daudzumu izpildītām aktivitātēm ģimenēm būs iespēja saņemt balvas. Precīzs balvu saņemšanas princips tiks precizēts — tas var būt atkarīgs no sakrāto zīmogu skaita vai tikt organizēts izlozes veidā.</p>
+          <p>Par dažādu daudzumu izpildītām aktivitātēm ģimenēm būs iespēja saņemt balvas.</p>
         </div>
       </div>
 
@@ -151,7 +134,7 @@
         <article>
           <strong>3.</strong>
           <span>Balvu iespēja</span>
-          <p>Balvas būs iespējams saņemt par dažādu daudzumu izpildītām aktivitātēm. Precīzs princips tiks paziņots vēlāk.</p>
+          <p>Balvas būs iespējams saņemt par dažādu daudzumu izpildītām aktivitātēm.</p>
         </article>
       </div>
     </section>
@@ -218,7 +201,7 @@
 
     <section class="section-pad map-section" id="karte">
       <div class="map-copy">
-        <span class="section-label">Karte</span>
+        <span class="section-label">Pasākuma karte</span>
         <h2>Festivāls notiks Uzvaras parkā</h2>
         <p>Precīzs aktivitāšu zonu izvietojums tiks pievienots tuvāk pasākumam. Pagaidām šeit ir norāde uz festivāla norises vietu.</p>
         <a class="button secondary" href="https://maps.google.com/?q=Uzvaras+parks+Riga" target="_blank" rel="noreferrer">Atvērt Google Maps</a>
