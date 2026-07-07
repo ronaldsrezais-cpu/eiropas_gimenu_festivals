@@ -6,7 +6,6 @@ const pageHtml = `<header class="site-header" id="top">
     </a>
 
     <nav class="main-nav" aria-label="Galvenā navigācija">
-      <a href="#par-festivalu">Par festivālu</a>
       <a href="#programma">Programma</a>
       <a href="#aktivitates">Aktivitātes</a>
       <a href="#karte">Pasākuma karte</a>
@@ -291,6 +290,17 @@ const pageHtml = `<header class="site-header" id="top">
         </div>
       </div>
     </section>
+    <section class="section-pad document-section" id="nolikums">
+      <div class="document-card">
+        <div>
+          <span class="section-label">Dokuments</span>
+          <h2>Pasākuma nolikums</h2>
+          <p>Šeit pieejams Eiropas Ģimeņu festivāla pasākuma nolikums PDF formātā.</p>
+        </div>
+        <a class="button primary" href="/documents/pasakuma-nolikums.pdf" target="_blank" rel="noreferrer">Atvērt nolikumu</a>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
