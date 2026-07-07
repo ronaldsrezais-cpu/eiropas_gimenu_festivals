@@ -43,7 +43,7 @@ const pageHtml = `<header class="site-header" id="top">
         <div class="hero-text-block">
           <p>Festivālā ģimenes varēs brīvi izmēģināt dažādus sporta veidus, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā.</p>
           <p>Dalība ir bez maksas, un aktivitātes būs piemērotas dažādiem vecumiem un sagatavotības līmeņiem.</p>
-          <p><strong>Ģimenes saņems aktivitāšu kartes, kurās varēs krāt zīmogus, sekot līdzi izmēģinātajām stacijām un, sakrājot zīmogus, piedalīties balvu izlozē. Iepriekš reģistrētās ģimenes piedalīsies arī papildu balvu izlozēs.</strong></p>
+          <p><strong>Ģimenes saņems aktivitāšu kartes, kurās varēs krāt zīmogus, sekot līdzi izmēģinātajām stacijām un, sakrājot zīmogus, piedalīties balvu izlozē. Tiešsaistē reģistrētās ģimenes piedalīsies arī papildu balvu izlozēs.</strong></p>
         </div>
         <div class="hero-actions">
           <a class="button primary" href="#registracija">Pieteikt ģimeni</a>
@@ -96,7 +96,7 @@ const pageHtml = `<header class="site-header" id="top">
           <time>11.00–17.00</time>
           <div>
             <h3>Zīmogi un balvu iespēja</h3>
-            <p>Ģimenes krās zīmogus aktivitāšu kartē, un, sakrājot noteiktu zīmogu skaitu, būs iespēja piedalīties lielisku balvu izlozē. Iepriekš reģistrētās ģimenes piedalīsies arī papildu balvu izlozēs.</p>
+            <p>Ģimenes krās zīmogus aktivitāšu kartē, un, sakrājot noteiktu zīmogu skaitu, būs iespēja piedalīties lielisku balvu izlozē. Tiešsaistē reģistrētās ģimenes piedalīsies arī papildu balvu izlozēs.</p>
           </div>
         </article>
         <article>
@@ -169,7 +169,7 @@ const pageHtml = `<header class="site-header" id="top">
         <div>
           <span class="section-label">Reģistrācija</span>
           <h2>Piesakiet ģimeni iepriekš</h2>
-          <p><strong>Iepriekšēja reģistrācija iespējama līdz 15. augustam, lai iegūtu personalizētu aktivitāšu karti.</strong> <strong>Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas.</strong></p>
+          <p><strong>Iepriekšēja reģistrācija iespējama līdz 15. augustam, lai iegūtu personalizētu aktivitāšu karti.</strong> <strong>Tiešsaistē reģistrētās ģimenes varēs piedalīties arī papildu balvu izlozē.</strong> <strong>Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas.</strong></p>
           <div class="form-intro-badge">Aizpildiet pieteikuma formu zemāk</div>
           <div class="custom-form-card">
             <form id="familyRegistrationForm" class="family-form" action="https://script.google.com/macros/s/AKfycbxFtZrMEgK9_B-xh4XpjXexUlBgRDSMigatcYA2XWigpNODxs3Y58mFv2AC5QNIeNewSg/exec" method="POST" target="hiddenSubmitFrame">
@@ -234,7 +234,7 @@ const pageHtml = `<header class="site-header" id="top">
         <aside class="registration-side" aria-label="Aktivitāšu kartes princips">
           <span class="section-label">Aktivitāšu karte</span>
           <h3>Krāj zīmogus aktivitāšu kartē</h3>
-          <p>Pasākuma dienā pie reģistrācijas telts katra ģimene saņems savu aktivitāšu karti. Kartē būs redzamas festivāla aktivitātes, un pēc katras paveiktās aktivitātes ģimene saņems zīmogu.<br><br>Karte palīdzēs viegli sekot līdzi, cik daudz aktivitāšu jau izmēģinātas, un padarīs dienu vēl aizraujošāku bērniem un pieaugušajiem.<br><br>Sakrājot noteiktu zīmogu skaitu, ģimenēm būs iespēja piedalīties lielisku balvu izlozē. Iepriekš reģistrētās ģimenes piedalīsies arī papildu balvu izlozēs.</p>
+          <p>Pasākuma dienā pie reģistrācijas telts katra ģimene saņems savu aktivitāšu karti. Kartē būs redzamas festivāla aktivitātes, un pēc katras paveiktās aktivitātes ģimene saņems zīmogu.<br><br>Karte palīdzēs viegli sekot līdzi, cik daudz aktivitāšu jau izmēģinātas, un padarīs dienu vēl aizraujošāku bērniem un pieaugušajiem.<br><br>Sakrājot noteiktu zīmogu skaitu, ģimenēm būs iespēja piedalīties lielisku balvu izlozē. Tiešsaistē reģistrētās ģimenes piedalīsies arī papildu balvu izlozēs.</p>
 
           <div class="stamp-mini-grid">
             <article>

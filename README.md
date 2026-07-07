@@ -61,3 +61,11 @@ Added note that pre-registered families will also participate in additional priz
 - Improved header/menu behavior on mobile.
 - Tightened hero, cards, form, and footer layout for smaller screens.
 - Better tap targets and stacked CTA/form controls on phones.
+
+
+## Latest text update
+Added note that pre-registered families can participate in an additional prize draw.
+
+
+## Latest text update
+Clarified that online-registered families can participate in the additional prize draw.
