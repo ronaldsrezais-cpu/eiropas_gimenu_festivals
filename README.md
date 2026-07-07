@@ -45,3 +45,19 @@ The Apps Script code is kept in `apps-script/Code.gs` for reference. If the Goog
 - Added scroll offset for sticky header navigation so section titles are not cut off.
 - Added `public/documents/pasakuma-nolikums.pdf`.
 - Added a bottom page section linking to Pasākuma nolikums.
+
+
+## Latest text update
+
+Updated activity-card / stamp wording to refer to participation in a prize draw after collecting a certain number of stamps.
+
+
+## Latest text update
+
+Added note that pre-registered families will also participate in additional prize draws.
+
+
+## Mobile optimization update
+- Improved header/menu behavior on mobile.
+- Tightened hero, cards, form, and footer layout for smaller screens.
+- Better tap targets and stacked CTA/form controls on phones.
