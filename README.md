@@ -104,3 +104,10 @@ To activate it:
 - Updated concept: activity card quantity is limited; online registration guarantees activity cards for the family, one for each participant.
 - Updated stamp wording to punched marks in activity cards.
 - Updated confirmation email text in Apps Script accordingly.
+
+
+## Latest layout/text update
+
+- Improved checkbox layout in the survey question so the checkbox and text stay together.
+- Reworked the survey/form layout to use available horizontal space better on desktop.
+- Updated introductory text to clearly state that families receive activity cards and can enter the prize draw after completing a minimum number of activities.

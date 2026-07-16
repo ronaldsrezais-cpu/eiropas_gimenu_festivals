@@ -37,7 +37,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="hero-text-block">
       <p>Festivālā ģimenes varēs brīvi izmēģināt dažādus sporta veidus, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā.</p>
       <p>Dalība ir bez maksas, un aktivitātes būs piemērotas dažādiem vecumiem un sagatavotības līmeņiem.</p>
-      <p><strong>Aktivitāšu karšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās garantē, ka ģimenei pasākuma dienā būs pieejamas aktivitāšu kartītes — katram dalībniekam sava. Pēc katras paveiktās aktivitātes kartītē tiks izspiesta atzīme, un, sakrājot noteiktu atzīmju skaitu, būs iespēja piedalīties balvu izlozē.</strong></p>
+      <p><strong>Pasākuma dienā ģimenes saņems aktivitāšu kartes — katram dalībniekam savu. Pēc katras paveiktās aktivitātes kartē tiks izspiesta atzīme, un, izpildot noteiktu minimālo aktivitāšu skaitu, ģimene varēs piedalīties balvu izlozē. Aktivitāšu karšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās garantē, ka ģimenei tās būs pieejamas.</strong></p>
       </div>
       <div class="hero-actions">
       <a class="button primary" href="#registracija">Pieteikt ģimeni</a>
@@ -86,7 +86,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <time>11:00–17:00</time>
       <div>
       <h3>Aktivitāšu kartītes un balvu iespēja</h3>
-      <p>Pēc katras paveiktās aktivitātes dalībnieka kartītē tiks izspiesta atzīme. Sakrājot noteiktu atzīmju skaitu, būs iespēja piedalīties balvu izlozē.</p>
+      <p>Pēc katras paveiktās aktivitātes dalībnieka kartītē tiks izspiesta atzīme. Izpildot noteiktu minimālo aktivitāšu skaitu, ģimene varēs piedalīties balvu izlozē.</p>
       </div>
       </article>
       <article>
@@ -263,7 +263,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <aside class="registration-side" aria-label="Aktivitāšu kartes princips">
       <span class="section-label">Aktivitāšu karte</span>
       <h3>Krāj atzīmes aktivitāšu kartītē</h3>
-      <p>Pasākuma dienā pie reģistrācijas telts iepriekš pieteiktās ģimenes saņems aktivitāšu kartītes — katram dalībniekam savu. Kartītēs būs redzamas festivāla aktivitātes, un pēc katras paveiktās aktivitātes tajās tiks izspiesta atzīme.<br><br>Kartīte palīdzēs viegli sekot līdzi, cik daudz aktivitāšu jau izmēģinātas, un padarīs dienu vēl aizraujošāku bērniem un pieaugušajiem.<br><br>Sakrājot noteiktu atzīmju skaitu, būs iespēja piedalīties balvu izlozē. </p>
+      <p>Pasākuma dienā pie reģistrācijas telts iepriekš pieteiktās ģimenes saņems aktivitāšu kartītes — katram dalībniekam savu. Kartītēs būs redzamas festivāla aktivitātes, un pēc katras paveiktās aktivitātes tajās tiks izspiesta atzīme.<br><br>Kartīte palīdzēs viegli sekot līdzi, cik daudz aktivitāšu jau izmēģinātas, un padarīs dienu vēl aizraujošāku bērniem un pieaugušajiem.<br><br>Izpildot noteiktu minimālo aktivitāšu skaitu, ģimene varēs piedalīties balvu izlozē. </p>
       <div class="stamp-mini-grid">
       <article>
       <strong>1.</strong>
@@ -278,7 +278,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <article>
       <strong>3.</strong>
       <span>Balvu iespēja</span>
-      <p>Sakrājot noteiktu atzīmju skaitu, būs iespēja piedalīties balvu izlozē.</p>
+      <p>Izpildot noteiktu minimālo aktivitāšu skaitu, ģimene varēs piedalīties balvu izlozē.</p>
       </article>
       </div>
       </aside>

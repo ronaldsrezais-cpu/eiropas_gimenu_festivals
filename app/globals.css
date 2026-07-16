@@ -2691,3 +2691,128 @@ footer[id],
     padding: 12px 13px;
   }
 }
+
+
+/* ===== Registration form layout and checkbox alignment refinement ===== */
+
+/* Use the available width better: form on the left, card explanation on the right,
+   while allowing the form fields to use two compact columns. */
+@media (min-width: 981px) {
+  .registration-card {
+    align-items: start !important;
+    grid-template-columns: minmax(0, 1.35fr) minmax(330px, .65fr) !important;
+  }
+
+  .custom-form-card {
+    width: 100% !important;
+  }
+
+  .family-form {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    align-items: start !important;
+  }
+
+  .family-form > .form-grid,
+  .family-form > .form-fieldset,
+  .family-form > .consent-check,
+  .family-form > .form-submit-row,
+  .family-form > .form-status {
+    grid-column: 1 / -1;
+  }
+
+  .family-form > .survey-fieldset {
+    grid-column: 1 / -1;
+  }
+
+  .survey-fieldset {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px 18px !important;
+  }
+
+  .survey-fieldset legend,
+  .survey-fieldset .survey-note,
+  .survey-fieldset .form-field.full,
+  .survey-fieldset .form-field.full:last-child,
+  .survey-fieldset > .form-field.full {
+    grid-column: auto;
+  }
+
+  .survey-fieldset legend,
+  .survey-fieldset .survey-note {
+    grid-column: 1 / -1;
+  }
+
+  .survey-fieldset > .form-field.full:nth-of-type(1),
+  .survey-fieldset > .form-field.full:nth-of-type(2),
+  .survey-fieldset > .form-field.full:nth-of-type(3) {
+    grid-column: auto;
+  }
+
+  .survey-fieldset > .form-field.full:nth-of-type(4) {
+    grid-column: 1 / -1;
+  }
+
+  .barriers-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .other-field {
+    max-width: 100%;
+  }
+}
+
+/* Fix the checkbox cards: keep checkbox and text together, aligned left. */
+.checkbox-grid label,
+.barriers-grid label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  text-align: left !important;
+  min-height: 52px !important;
+  padding: 11px 13px !important;
+  line-height: 1.25 !important;
+}
+
+.checkbox-grid label input,
+.barriers-grid label input {
+  flex: 0 0 auto !important;
+  width: 17px !important;
+  height: 17px !important;
+  margin: 0 !important;
+}
+
+.checkbox-grid label span,
+.barriers-grid label span {
+  display: inline !important;
+}
+
+/* Some labels contain only text after input; this prevents it from being pushed to the far right. */
+.barriers-grid label {
+  font-weight: 850 !important;
+}
+
+@media (max-width: 980px) {
+  .survey-fieldset {
+    display: block !important;
+  }
+
+  .barriers-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .checkbox-grid label,
+  .barriers-grid label {
+    min-height: auto !important;
+    padding: 10px 12px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .barriers-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
