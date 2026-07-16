@@ -2636,3 +2636,58 @@ footer[id],
     min-height: 260px !important;
   }
 }
+
+
+/* Survey questions in registration form */
+.form-field select {
+  width: 100%;
+  border: 1px solid rgba(38, 51, 59, .14);
+  border-radius: 14px;
+  padding: 13px 14px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: #ffffff;
+  outline: none;
+}
+
+.form-field select:focus {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 4px rgba(240, 112, 93, .12);
+}
+
+.survey-fieldset {
+  background: rgba(255, 247, 232, .72);
+}
+
+.survey-note,
+.field-help {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.survey-note {
+  font-weight: 800;
+}
+
+.barriers-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 12px;
+}
+
+.other-field {
+  margin-top: 8px;
+}
+
+@media (max-width: 760px) {
+  .barriers-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-field select {
+    font-size: 14px;
+    padding: 12px 13px;
+  }
+}

@@ -83,3 +83,16 @@ logoBrand?.addEventListener('click', function (event) {
   header?.classList.remove('open');
   menuButton?.setAttribute('aria-expanded', 'false');
 });
+
+
+// Limit barrier question to max two selected answers
+const barrierInputs = Array.from(document.querySelectorAll('input[name="aktivitate_skersli"]'));
+barrierInputs.forEach(input => {
+  input.addEventListener('change', () => {
+    const selected = barrierInputs.filter(item => item.checked);
+    if (selected.length > 2) {
+      input.checked = false;
+      alert('Lūdzu, izvēlieties ne vairāk kā divas atbildes.');
+    }
+  });
+});

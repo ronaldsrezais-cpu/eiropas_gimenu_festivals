@@ -69,3 +69,38 @@ Added note that pre-registered families can participate in an additional prize d
 
 ## Latest text update
 Clarified that online-registered families can participate in the additional prize draw.
+
+
+## Latest update
+
+- Updated event time to 11:00–17:00.
+- Updated programme start and closing time.
+- Removed contact person name and accessibility notes fields from registration form.
+- Added anonymous family activity survey questions.
+- Added max-two selection validation for the barriers question.
+- Expanded consent text to include photography/filming and use in LSFP communication materials.
+- Updated Apps Script so registration data and anonymous survey answers are written to separate sheets.
+
+
+## Confirmation email update
+
+The Google Apps Script in `apps-script/Code.gs` now:
+- saves the registration in `Pieteikumi`;
+- saves survey answers separately in `Anonīmās atbildes`;
+- sends a confirmation email to the address submitted in the form.
+
+To activate it:
+1. Open the Google Apps Script project used by the form.
+2. Replace the current code with `apps-script/Code.gs` from this ZIP.
+3. Save.
+4. Deploy → Manage deployments → Edit → New version → Deploy.
+5. Test the form with your own email address.
+
+
+## Latest text update
+
+- Removed references to additional prize draws.
+- Removed references to personalised activity cards.
+- Updated concept: activity card quantity is limited; online registration guarantees activity cards for the family, one for each participant.
+- Updated stamp wording to punched marks in activity cards.
+- Updated confirmation email text in Apps Script accordingly.
