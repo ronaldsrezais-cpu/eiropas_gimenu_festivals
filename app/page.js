@@ -37,7 +37,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="hero-text-block">
       <p>Festivālā ģimenes varēs brīvi izmēģināt dažādus sporta veidus, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā.</p>
       <p>Dalība ir bez maksas, un aktivitātes būs piemērotas dažādiem vecumiem un sagatavotības līmeņiem.</p>
-      <p><strong>Pasākuma dienā ģimenes saņems aktivitāšu kartes — katram dalībniekam savu. Pēc katras paveiktās aktivitātes kartē tiks izspiesta atzīme, un, izpildot noteiktu minimālo aktivitāšu skaitu, ģimene varēs piedalīties balvu izlozē. Aktivitāšu karšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās garantē, ka ģimenei tās būs pieejamas.</strong></p>
+      <p><strong>Ģimenes saņems aktivitāšu kartes — katram dalībniekam savu. Pēc aktivitātēm kartēs tiks izspiestas atzīmes, un, izpildot noteikto minimumu, ģimene varēs piedalīties balvu izlozē. Karšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās tās garantē.</strong></p>
       </div>
       <div class="hero-actions">
       <a class="button primary" href="#registracija">Pieteikt ģimeni</a>
@@ -72,7 +72,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <time>No 11:00</time>
       <div>
       <h3>Ierašanās, reģistrācija un aktivitāšu kartes saņemšana</h3>
-      <p>Ģimenes ierodas reģistrācijas punktā, nosauc savu ģimenes nosaukumu un saņem aktivitāšu kartītes.</p>
+      <p>Ģimenes ierodas reģistrācijas punktā, nosauc savu ģimenes nosaukumu un saņem aktivitāšu kartītes. Ģimenes, kas nav pieteikušās iepriekš, varēs reģistrēties arī uz vietas, kamēr aktivitāšu kartītes būs pieejamas.</p>
       </div>
       </article>
       <article>

@@ -96,3 +96,30 @@ barrierInputs.forEach(input => {
     }
   });
 });
+
+
+// Store all selected barrier answers in one hidden field before submitting
+function syncBarrierAnswers() {
+  const checked = Array.from(document.querySelectorAll('input[name="aktivitate_skersli"]:checked'))
+    .map(input => input.value)
+    .filter(Boolean);
+
+  const form = document.querySelector('.family-form');
+  if (!form) return;
+
+  let hidden = form.querySelector('input[name="aktivitate_skersli_selected"]');
+  if (!hidden) {
+    hidden = document.createElement('input');
+    hidden.type = 'hidden';
+    hidden.name = 'aktivitate_skersli_selected';
+    form.appendChild(hidden);
+  }
+
+  hidden.value = checked.join(', ');
+}
+
+document.querySelectorAll('input[name="aktivitate_skersli"]').forEach(input => {
+  input.addEventListener('change', syncBarrierAnswers);
+});
+
+document.querySelector('.family-form')?.addEventListener('submit', syncBarrierAnswers);

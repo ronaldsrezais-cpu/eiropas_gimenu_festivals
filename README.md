@@ -111,3 +111,46 @@ To activate it:
 - Improved checkbox layout in the survey question so the checkbox and text stay together.
 - Reworked the survey/form layout to use available horizontal space better on desktop.
 - Updated introductory text to clearly state that families receive activity cards and can enter the prize draw after completing a minimum number of activities.
+
+
+## Latest update
+
+- Shortened the hero activity-card text to keep the countdown visible.
+- Reduced registration form typography, spacing, inputs, fieldsets, and card text on desktop.
+
+
+## Latest update
+- Added onsite registration note in programme registration section.
+
+
+## Apps Script email fix
+
+This version fixes the confirmation email issue by matching the current form field names:
+- `contactEmail`
+- `adultsCount`
+- `childrenCount`
+- `childrenAgeGroups`
+- `dataConsent`
+
+After copying `apps-script/Code.gs` into Google Apps Script, deploy a new Web App version and authorize MailApp.
+
+
+## Sheet header and field mapping fix
+
+This Apps Script version:
+- rewrites the first row of `Pieteikumi` to match the current website form;
+- removes the old accessibility notes column from the active header row;
+- correctly reads current form field names: `familyName`, `contactEmail`, `adultsCount`, `childrenCount`, `childrenAgeGroups`;
+- writes anonymous survey answers to a separate sheet `Anonīmās atbildes`;
+- sends the confirmation email when `contactEmail` is provided.
+
+After copying `apps-script/Code.gs`, deploy a new Web App version.
+
+
+## Multiple checkbox answer fix
+
+Fixes the question "Kas traucē būt fiziski aktīviem kopā?" so that if two options are selected, both are saved in Google Sheets.
+
+Implementation:
+- Frontend adds/updates hidden field `aktivitate_skersli_selected` with all selected answers joined by comma.
+- Apps Script reads `aktivitate_skersli_selected` first, then falls back to multiple values from `e.parameters`.

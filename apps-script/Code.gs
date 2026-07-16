@@ -2,36 +2,43 @@ const SPREADSHEET_ID = '';
 const SHEET_NAME = 'Pieteikumi';
 const SURVEY_SHEET_NAME = 'Anonīmās atbildes';
 
+const REGISTRATION_HEADERS = [
+  'Laiks',
+  'Ģimenes nosaukums aktivitāšu kartei',
+  'E-pasts',
+  'Pieaugušo skaits',
+  'Bērnu skaits',
+  'Bērnu vecuma grupas',
+  'Piekrišana organizatoriskajām vajadzībām un foto/video izmantošanai',
+  'Ieraksta avots'
+];
+
+const SURVEY_HEADERS = [
+  'Laiks',
+  'Cik bieži ģimene ir fiziski aktīva kopā?',
+  'Zināšanas par veidiem, kā ikdienā iekļaut fiziskās aktivitātes',
+  'Motivācija būt fiziski aktīvākiem kopā',
+  'Kas traucē būt fiziski aktīviem kopā?',
+  'Cits šķērslis',
+  'Ieraksta avots'
+];
+
 function doPost(e) {
   try {
     const params = e.parameter || {};
+    const allParams = e.parameters || {};
+
     const ss = SPREADSHEET_ID
       ? SpreadsheetApp.openById(SPREADSHEET_ID)
       : SpreadsheetApp.getActiveSpreadsheet();
 
-    const sheet = getOrCreateSheet_(ss, SHEET_NAME);
+    const registrationSheet = getOrCreateSheet_(ss, SHEET_NAME);
     const surveySheet = getOrCreateSheet_(ss, SURVEY_SHEET_NAME);
 
-    ensureHeaders_(sheet, [
-      'Laiks',
-      'Ģimenes nosaukums aktivitāšu kartei',
-      'Kontaktpersonas e-pasts',
-      'Pieaugušie',
-      'Bērni',
-      'Bērnu vecuma grupas',
-      'Piekrišana',
-      'Ieraksta avots'
-    ]);
-
-    ensureHeaders_(surveySheet, [
-      'Laiks',
-      'Cik bieži ģimene ir fiziski aktīva kopā?',
-      'Zināšanas par veidiem, kā ikdienā iekļaut fiziskās aktivitātes',
-      'Motivācija būt fiziski aktīvākiem kopā',
-      'Kas traucē būt fiziski aktīviem kopā?',
-      'Cits šķērslis',
-      'Ieraksta avots'
-    ]);
+    // This updates the first row to the current form structure.
+    // It removes the old "Īpašas vajadzības / piekļūstamības piezīmes" column from the active structure.
+    prepareSheet_(registrationSheet, REGISTRATION_HEADERS);
+    prepareSheet_(surveySheet, SURVEY_HEADERS);
 
     const familyName = firstValue_(params, [
       'familyName',
@@ -41,27 +48,34 @@ function doPost(e) {
     ]);
 
     const email = firstValue_(params, [
+      'contactEmail',
       'email',
       'kontaktpersonas_epasts',
       'kontaktpersonasEpasts',
-      'Kontaktpersonas e-pasts'
+      'Kontaktpersonas e-pasts',
+      'E-pasts'
     ]);
 
     const adults = firstValue_(params, [
+      'adultsCount',
       'adults',
       'pieaugusie',
       'Pieaugušie',
+      'Pieaugušo skaits',
       'Cik pieaugušie plāno ierasties?'
     ]);
 
     const children = firstValue_(params, [
+      'childrenCount',
       'children',
       'berni',
       'Bērni',
+      'Bērnu skaits',
       'Cik bērni plāno ierasties?'
     ]);
 
-    const childAges = joinMulti_(params, [
+    const childAges = joinMulti_(params, allParams, [
+      'childrenAgeGroups',
       'childAges',
       'bernu_vecuma_grupas',
       'bernuVecumaGrupas',
@@ -69,12 +83,13 @@ function doPost(e) {
     ]);
 
     const consent = firstValue_(params, [
+      'dataConsent',
       'consent',
       'piekritu',
       'Piekrišana'
-    ]);
+    ]) || 'Jā';
 
-    sheet.appendRow([
+    registrationSheet.appendRow([
       new Date(),
       familyName,
       email,
@@ -97,7 +112,9 @@ function doPost(e) {
       'gimenes_motivacija_but_aktivakai'
     ]);
 
-    const barriers = joinMulti_(params, [
+    const barriers = firstValue_(params, [
+      'aktivitate_skersli_selected'
+    ]) || joinMulti_(params, allParams, [
       'aktivitate_skersli'
     ]);
 
@@ -123,7 +140,9 @@ function doPost(e) {
 
     return jsonResponse_({
       ok: true,
-      message: 'Pieteikums saņemts. Apstiprinājums nosūtīts uz norādīto e-pastu.'
+      message: email
+        ? 'Pieteikums saņemts. Apstiprinājums nosūtīts uz norādīto e-pastu.'
+        : 'Pieteikums saņemts, bet e-pasta adrese netika atrasta.'
     });
   } catch (error) {
     return jsonResponse_({
@@ -145,7 +164,6 @@ function sendConfirmationEmail_(email, familyName) {
     'Paldies! Jūsu ģimenes pieteikums Eiropas Ģimeņu festivālam ir saņemts.\n\n' +
     'Pasākums norisināsies 2026. gada 22. augustā Uzvaras parkā, Rīgā, no plkst. 11.00 līdz 17.00.\n\n' +
     'Pasākuma dienā reģistrācijas punktā nosauciet savu ģimenes nosaukumu un saņemsiet aktivitāšu kartītes — katram dalībniekam savu.\n\n' +
-    '' +
     'Dalība pasākumā ir bez maksas.\n\n' +
     'Uz tikšanos Eiropas Ģimeņu festivālā!\n\n' +
     'Latvijas Sporta federāciju padome';
@@ -172,17 +190,21 @@ function getOrCreateSheet_(ss, sheetName) {
   return ss.getSheetByName(sheetName) || ss.insertSheet(sheetName);
 }
 
-function ensureHeaders_(sheet, headers) {
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(headers);
-    return;
+function prepareSheet_(sheet, headers) {
+  const currentColumns = sheet.getMaxColumns();
+
+  if (currentColumns < headers.length) {
+    sheet.insertColumnsAfter(currentColumns, headers.length - currentColumns);
   }
 
-  const existing = sheet.getRange(1, 1, 1, Math.max(sheet.getLastColumn(), headers.length)).getValues()[0];
-  const hasAnyHeader = existing.some(function(value) { return value !== ''; });
+  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  sheet.setFrozenRows(1);
 
-  if (!hasAnyHeader) {
-    sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  const lastColumn = sheet.getLastColumn();
+
+  // Clear old extra header cells to the right, for example the old accessibility notes column.
+  if (lastColumn > headers.length) {
+    sheet.getRange(1, headers.length + 1, 1, lastColumn - headers.length).clearContent();
   }
 }
 
@@ -196,29 +218,28 @@ function firstValue_(params, keys) {
   return '';
 }
 
-function joinMulti_(params, keys) {
+function joinMulti_(params, allParams, keys) {
   var values = [];
 
   keys.forEach(function(key) {
-    var allValues = [];
-    try {
-      allValues = params[key] !== undefined ? [params[key]] : [];
-    } catch (err) {
-      allValues = [];
+    if (allParams[key] && Array.isArray(allParams[key])) {
+      allParams[key].forEach(function(item) {
+        const value = String(item || '').trim();
+        if (value) values.push(value);
+      });
+    } else if (params[key] !== undefined && params[key] !== null && String(params[key]).trim() !== '') {
+      const raw = String(params[key]).trim();
+      raw.split(',').forEach(function(item) {
+        const value = String(item || '').trim();
+        if (value) values.push(value);
+      });
     }
-
-    allValues.forEach(function(value) {
-      if (Array.isArray(value)) {
-        value.forEach(function(item) {
-          if (String(item).trim()) values.push(String(item).trim());
-        });
-      } else if (String(value).trim()) {
-        values.push(String(value).trim());
-      }
-    });
   });
 
-  return values.join(', ');
+  // Remove duplicates while keeping order.
+  return values.filter(function(value, index, array) {
+    return array.indexOf(value) === index;
+  }).join(', ');
 }
 
 function jsonResponse_(payload) {
