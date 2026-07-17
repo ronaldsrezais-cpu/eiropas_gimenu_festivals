@@ -35,9 +35,9 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="hero-content">
       <h1>Eiropas Ģimeņu festivāls</h1>
       <div class="hero-text-block">
-      <p>Festivālā ģimenes varēs brīvi izmēģināt vairāk nekā 30 sporta aktivitātes, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā.</p>
+      <p>Festivālā ģimenes varēs brīvi izmēģināt vairāk nekā 30 sporta aktivitātes, satikt sporta federāciju pārstāvjus un atrast idejas aktīvam laikam kopā. Visas dienas garumā uz galvenās skatuves būs arī sporta veidu paraugdemonstrējumi.</p>
       <p>Dalība ir bez maksas, un aktivitātes būs piemērotas dažādiem vecumiem un sagatavotības līmeņiem.</p>
-      <p>Ģimenes saņems aktivitāšu kartītes. Pēc katras aktivitātes uzdevuma izpildes tiks veikta atzīme kartītē, un, izpildot noteikto minimumu, ģimene varēs piedalīties balvu izlozē.</p>
+      <p>Ģimenes saņems aktivitāšu kartītes. Pēc katras aktivitātes uzdevuma izpildes tiks veikta atzīme kartītē, un, izpildot noteikto minimumu, ģimene varēs piedalīties balvu izspēlē.</p>
       <p><strong>Karšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās tās garantē.</strong></p>
       </div>
       <div class="hero-actions">
@@ -85,10 +85,17 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       </div>
       </article>
       <article>
+      <time>Visas dienas garumā</time>
+      <div>
+      <h3>Sporta veidu paraugdemonstrējumi uz galvenās skatuves</h3>
+      <p>Uz galvenās skatuves būs iespēja vērot dažādu sporta veidu paraugdemonstrējumus.</p>
+      </div>
+      </article>
+      <article>
       <time>11:00–17:00</time>
       <div>
       <h3>Aktivitāšu kartītes un balvu iespēja</h3>
-      <p>Pēc katras paveiktās aktivitātes dalībnieka kartītē tiks izspiesta atzīme. Izpildot noteiktu minimālo aktivitāšu skaitu, ģimene varēs piedalīties balvu izlozē.</p>
+      <p>Pēc katras paveiktās aktivitātes dalībnieka kartītē tiks izspiesta atzīme. Izpildot noteiktu minimālo aktivitāšu skaitu, ģimene varēs piedalīties balvu izspēlē.</p>
       </div>
       </article>
       <article>
@@ -102,7 +109,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <aside class="registration-side programme-card-info" aria-label="Aktivitāšu kartes princips">
       <span class="section-label">Aktivitāšu karte</span>
       <h3>Krāj atzīmes aktivitāšu kartītē</h3>
-      <p>Ģimenes saņems aktivitāšu kartītes — katram dalībniekam savu. Pēc katras aktivitātes uzdevuma izpildes tiks veikta atzīme kartītē, un, izpildot noteikto minimumu, ģimene varēs piedalīties balvu izlozē.</p>
+      <p>Ģimenes saņems aktivitāšu kartītes — katram dalībniekam savu. Pēc katras aktivitātes uzdevuma izpildes tiks veikta atzīme kartītē, un, izpildot noteikto minimumu, ģimene varēs piedalīties balvu izspēlē.</p>
       <div class="stamp-mini-grid">
       <article>
       <strong>1.</strong>
@@ -116,8 +123,8 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       </article>
       <article>
       <strong>3.</strong>
-      <span>Balvu iespēja</span>
-      <p>Izpildot noteikto minimumu, ģimene varēs piedalīties balvu izlozē.</p>
+      <span>Balvu izspēle</span>
+      <p>Izpildot noteikto minimumu, ģimene varēs piedalīties balvu izspēlē.</p>
       </article>
       </div>
       </aside>
@@ -311,14 +318,6 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       </div>
       </div>
       </section>
-      <section class="section-pad document-section" id="nolikums">
-      <div class="document-card compact-document-card">
-      <div>
-      <h2>Pasākuma nolikums</h2>
-      </div>
-      <a class="button primary" href="/documents/pasakuma-nolikums.pdf" target="_blank" rel="noreferrer">Atvērt nolikumu</a>
-      </div>
-      </section>
       </main>
       <footer class="site-footer">
       <div class="footer-top">
@@ -328,7 +327,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       </div>
       <div class="footer-contacts" aria-label="Kontaktinformācija">
       <strong>Kontakti</strong>
-      <a href="mailto:lsfp@lsfp.lv">lsfp@lsfp.lv</a>
+      <a href="mailto:latvijassportafederacijupadome@gmail.com">latvijassportafederacijupadome@gmail.com</a>
       <a href="https://lsfp.lv/" target="_blank" rel="noreferrer">lsfp.lv</a>
       <span>Tālrunis: +371 68622302</span>
       </div>

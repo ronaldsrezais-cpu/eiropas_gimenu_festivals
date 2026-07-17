@@ -3339,3 +3339,44 @@ footer[id],
     white-space: normal !important;
   }
 }
+
+
+/* ===== Latest requested visual updates ===== */
+
+/* White background for the logo/partner strip */
+.footer-partners,
+.partner-logos,
+.partners-strip,
+.logo-strip,
+.footer-logos,
+.footer-branding {
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  padding: 18px !important;
+  color: var(--ink) !important;
+}
+
+.footer-partners *,
+.partner-logos *,
+.partners-strip *,
+.logo-strip *,
+.footer-logos *,
+.footer-branding * {
+  color: var(--ink) !important;
+}
+
+.footer-partners .section-label,
+.partner-logos .section-label,
+.partners-strip .section-label,
+.logo-strip .section-label,
+.footer-logos .section-label,
+.footer-branding .section-label {
+  background: rgba(246, 183, 63, .14) !important;
+  color: #a6402f !important;
+}
+
+@media (min-width: 981px) {
+  .programme-layout .timeline article {
+    min-height: 0 !important;
+  }
+}

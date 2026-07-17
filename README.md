@@ -192,3 +192,12 @@ Implementation:
 - Added logo asset: `public/assets/logos/lsfp-email-logo.png`.
 
 After uploading the website ZIP to Vercel, also copy the updated `apps-script/Code.gs` into Apps Script and deploy a new Web App version.
+
+
+## Latest update
+
+- Logo/partner strip background changed to white.
+- Removed the event rules / “Pasākuma nolikums” section for now.
+- Added note that sports demonstrations will take place on the main stage throughout the day.
+- Replaced “izloze” wording with “izspēle” where relevant.
+- Updated contact email to latvijassportafederacijupadome@gmail.com.
