@@ -154,3 +154,11 @@ Fixes the question "Kas traucē būt fiziski aktīviem kopā?" so that if two op
 Implementation:
 - Frontend adds/updates hidden field `aktivitate_skersli_selected` with all selected answers joined by comma.
 - Apps Script reads `aktivitate_skersli_selected` first, then falls back to multiple values from `e.parameters`.
+
+
+## Latest layout and text update
+
+- Updated hero intro text.
+- Only the card-limit registration guarantee sentence is bold in the hero.
+- Moved the activity-card explanation block next to the programme section.
+- Registration form now uses the full page width on desktop and a wider multi-column layout.
