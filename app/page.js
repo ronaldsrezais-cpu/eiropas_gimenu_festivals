@@ -85,7 +85,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       </div>
       </article>
       <article>
-      <time>Visas dienas garumā</time>
+      <time>11:00–17:00</time>
       <div>
       <h3>Sporta veidu paraugdemonstrējumi uz galvenās skatuves</h3>
       <p>Uz galvenās skatuves būs iespēja vērot dažādu sporta veidu paraugdemonstrējumus.</p>
@@ -339,11 +339,11 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       </div>
       <div class="partner-item partner-item--support">
       <span class="partner-label">Atbalsta</span>
-      <img class="partner-logo partner-logo--izm-full" src="assets/logos/izm-footer-white.png" alt="Izglītības un zinātnes ministrija" />
+      <img class="partner-logo partner-logo--izm-full" src="/assets/logos/izm-logo-new.png" alt="Izglītības un zinātnes ministrija" />
       </div>
       </div>
       <div class="eu-note eu-disclaimer">
-      <img class="eu-logo" src="assets/logos/eu-finanse.png" alt="Līdzfinansē Eiropas Savienība" />
+      <img class="eu-logo" src="/assets/logos/eu-finanse-white-outline.png" alt="Līdzfinansē Eiropas Savienība" />
       <p>Finansē Eiropas Savienība. Tomēr paustie uzskati un viedokļi ir tikai autora(-u) uzskati un viedokļi, un tie ne vienmēr atspoguļo Eiropas Savienības vai Eiropas Izglītības un kultūras izpildaģentūras (EACEA) viedokli. Ne Eiropas Savienība, ne EACEA par tiem neatbild.</p>
       </div>
       </footer>`; export default function Page() { return ( <>

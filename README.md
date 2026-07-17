@@ -201,3 +201,9 @@ After uploading the website ZIP to Vercel, also copy the updated `apps-script/Co
 - Added note that sports demonstrations will take place on the main stage throughout the day.
 - Replaced “izloze” wording with “izspēle” where relevant.
 - Updated contact email to latvijassportafederacijupadome@gmail.com.
+
+
+## Latest logo update
+
+- Replaced IZM logo with the uploaded `LV-tikai-gerbonis-CMYK.pdf`, converted to `public/assets/logos/izm-logo-new.png`.
+- Replaced EU co-funding logo with uploaded `LV_Co-fundedbytheEU_RGB_WHITE Outline.png`.

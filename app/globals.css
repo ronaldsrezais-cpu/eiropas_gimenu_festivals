@@ -3380,3 +3380,35 @@ footer[id],
     min-height: 0 !important;
   }
 }
+
+
+/* ===== Logo replacement sizing ===== */
+
+.partner-logo--izm-full,
+.partner-logo--izm,
+img[src*="izm-logo-new"] {
+  max-width: 190px !important;
+  max-height: 130px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* Keep partner/logo strip white as requested */
+.footer-partners,
+.partner-logos,
+.partners-strip,
+.logo-strip,
+.footer-logos,
+.footer-branding {
+  background: #ffffff !important;
+}
+
+/* New EU white-outline logo works best without white backing */
+.eu-disclaimer img,
+img[src*="eu-finanse-white-outline"] {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  max-width: 460px !important;
+}
