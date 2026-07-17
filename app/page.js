@@ -176,7 +176,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div>
       <span class="section-label">Reģistrācija</span>
       <h2>Piesakiet ģimeni iepriekš</h2>
-      <p>Iepriekšēja reģistrācija iespējama līdz 15. augustam. <strong>Karšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās aktivitāšu kartītes garantē.</strong> Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas, kamēr aktivitāšu kartītes būs pieejamas.</p>
+      <p><strong>Iepriekšēja reģistrācija iespējama līdz 18. augustam.</strong><br /><strong>Kartīšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās garantēs aktivitāšu kartītes saņemšanu.</strong><br />Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas, kamēr aktivitāšu kartītes būs pieejamas.</p>
       <div class="form-intro-badge">Aizpildiet pieteikuma formu zemāk</div>
       <div class="custom-form-card">
       <form id="familyRegistrationForm" class="family-form" action="https://script.google.com/macros/s/AKfycbxFtZrMEgK9_B-xh4XpjXexUlBgRDSMigatcYA2XWigpNODxs3Y58mFv2AC5QNIeNewSg/exec" method="POST" target="hiddenSubmitFrame">
@@ -312,11 +312,9 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       </div>
       </section>
       <section class="section-pad document-section" id="nolikums">
-      <div class="document-card">
+      <div class="document-card compact-document-card">
       <div>
-      <span class="section-label">Dokuments</span>
       <h2>Pasākuma nolikums</h2>
-      <p>Šeit pieejams Eiropas Ģimeņu festivāla pasākuma nolikums PDF formātā.</p>
       </div>
       <a class="button primary" href="/documents/pasakuma-nolikums.pdf" target="_blank" rel="noreferrer">Atvērt nolikumu</a>
       </div>

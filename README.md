@@ -162,3 +162,9 @@ Implementation:
 - Only the card-limit registration guarantee sentence is bold in the hero.
 - Moved the activity-card explanation block next to the programme section.
 - Registration form now uses the full page width on desktop and a wider multi-column layout.
+
+
+## Latest update
+- Registration text updated to 18 August with the first two lines bold.
+- Document section simplified to only “Pasākuma nolikums” and “Atvērt nolikumu”.
+- Activity-card block next to programme tightened to reduce its height.
