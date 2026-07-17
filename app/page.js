@@ -74,35 +74,30 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <time>No 11:00</time>
       <div>
       <h3>Ierašanās, reģistrācija un aktivitāšu kartes saņemšana</h3>
-      <p>Ģimenes ierodas reģistrācijas punktā, nosauc savu ģimenes nosaukumu un saņem aktivitāšu kartītes. Ģimenes, kas nav pieteikušās iepriekš, varēs reģistrēties arī uz vietas, kamēr aktivitāšu kartītes būs pieejamas.</p>
       </div>
       </article>
       <article>
       <time>11:00–17:00</time>
       <div>
       <h3>Aktivitāšu stacijas visā festivāla teritorijā</h3>
-      <p>Ģimenes pašas izvēlas, kuras aktivitātes apmeklēt un kādā secībā tās izmēģināt.</p>
       </div>
       </article>
       <article>
       <time>11:00–17:00</time>
       <div>
       <h3>Sporta veidu paraugdemonstrējumi uz galvenās skatuves</h3>
-      <p>Uz galvenās skatuves būs iespēja vērot dažādu sporta veidu paraugdemonstrējumus.</p>
       </div>
       </article>
       <article>
       <time>11:00–17:00</time>
       <div>
       <h3>Aktivitāšu kartītes un balvu iespēja</h3>
-      <p>Pēc katras paveiktās aktivitātes dalībnieka kartītē tiks izspiesta atzīme. Izpildot noteiktu minimālo aktivitāšu skaitu, ģimene varēs piedalīties balvu izspēlē.</p>
       </div>
       </article>
       <article>
       <time>17:00</time>
       <div>
       <h3>Festivāla noslēgums</h3>
-      <p>Kopīgs dienas noslēgums ar pateicību dalībniekiem un svētku sajūtas noslēgšanu.</p>
       </div>
       </article>
       </div>

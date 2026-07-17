@@ -207,3 +207,13 @@ After uploading the website ZIP to Vercel, also copy the updated `apps-script/Co
 
 - Replaced IZM logo with the uploaded `LV-tikai-gerbonis-CMYK.pdf`, converted to `public/assets/logos/izm-logo-new.png`.
 - Replaced EU co-funding logo with uploaded `LV_Co-fundedbytheEU_RGB_WHITE Outline.png`.
+
+
+## Latest update
+- Removed descriptive paragraphs under each programme item heading.
+- Programme cards are now more compact and vertically centered.
+
+
+## Latest footer update
+- Aligned “Koordinē” and “Atbalsta” labels in the footer logo block.
+- Reduced the EU co-funding logo and disclaimer/reference text significantly.
