@@ -141,8 +141,8 @@ function doPost(e) {
     return jsonResponse_({
       ok: true,
       message: email
-        ? 'Pieteikums saņemts. Apstiprinājums nosūtīts uz norādīto e-pastu.'
-        : 'Pieteikums saņemts, bet e-pasta adrese netika atrasta.'
+        ? 'Paldies, pieteikums saņemts. Dalības apstiprinājumu saņemsiet norādītajā e-pastā.'
+        : 'Paldies, pieteikums saņemts.'
     });
   } catch (error) {
     return jsonResponse_({
@@ -161,21 +161,22 @@ function sendConfirmationEmail_(email, familyName) {
 
   const textBody =
     greeting + '\n\n' +
-    'Paldies! Jūsu ģimenes pieteikums Eiropas Ģimeņu festivālam ir saņemts.\n\n' +
+    'Paldies! Jūsu ģimenes pieteikums Eiropas Ģimeņu festivālam ir saņemts un apstiprināts.\n\n' +
     'Pasākums norisināsies 2026. gada 22. augustā Uzvaras parkā, Rīgā, no plkst. 11.00 līdz 17.00.\n\n' +
-    'Pasākuma dienā reģistrācijas punktā nosauciet savu ģimenes nosaukumu un saņemsiet aktivitāšu kartītes — katram dalībniekam savu.\n\n' +
+    'Pasākuma dienā reģistrācijas punktā nosauciet savu ģimenes nosaukumu un saņemsiet savas aktivitāšu kartītes.\n\n' +
     'Dalība pasākumā ir bez maksas.\n\n' +
     'Uz tikšanos Eiropas Ģimeņu festivālā!\n\n' +
     'Latvijas Sporta federāciju padome';
 
   const htmlBody =
     '<p>' + escapeHtml_(greeting) + '</p>' +
-    '<p><strong>Paldies! Jūsu ģimenes pieteikums Eiropas Ģimeņu festivālam ir saņemts.</strong></p>' +
+    '<p><strong>Paldies! Jūsu ģimenes pieteikums Eiropas Ģimeņu festivālam ir saņemts un apstiprināts.</strong></p>' +
     '<p>Pasākums norisināsies <strong>2026. gada 22. augustā Uzvaras parkā, Rīgā, no plkst. 11.00 līdz 17.00.</strong></p>' +
-    '<p>Pasākuma dienā reģistrācijas punktā nosauciet savu ģimenes nosaukumu un saņemsiet aktivitāšu kartītes — katram dalībniekam savu.</p>' +
+    '<p>Pasākuma dienā reģistrācijas punktā nosauciet savu ģimenes nosaukumu un saņemsiet savas aktivitāšu kartītes.</p>' +
     '<p>Dalība pasākumā ir bez maksas.</p>' +
     '<p>Uz tikšanos Eiropas Ģimeņu festivālā!</p>' +
-    '<p>Latvijas Sporta federāciju padome</p>';
+    '<p>Latvijas Sporta federāciju padome</p>' +
+    '<p style="margin-top:18px;"><img src="https://www.gimenufestivals.lv/assets/logos/lsfp-email-logo.png" alt="Latvijas Sporta federāciju padome" style="max-width:220px;width:100%;height:auto;display:block;"></p>';
 
   MailApp.sendEmail({
     to: email,

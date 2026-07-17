@@ -168,3 +168,27 @@ Implementation:
 - Registration text updated to 18 August with the first two lines bold.
 - Document section simplified to only “Pasākuma nolikums” and “Atvērt nolikumu”.
 - Activity-card block next to programme tightened to reduce its height.
+
+
+## Latest update
+- Programme and activity-card blocks are now forced to equal height on desktop.
+- Timeline cards and activity-card mini cards stretch evenly inside their columns.
+
+
+## Latest update
+- Anonymous survey note is kept on one line on wider desktop screens.
+- Consent text now spans the full form width so the required asterisk fits with the text.
+
+
+## Latest update
+- Updated the form submission confirmation message to:
+  "Paldies, pieteikums saņemts. Dalības apstiprinājumu saņemsiet norādītajā e-pastā."
+
+
+## Latest email update
+- Confirmation email text now says the registration is received and approved.
+- Activity-card sentence updated to: “saņemsiet savas aktivitāšu kartītes”.
+- Added LSFP logo to the bottom of the HTML confirmation email.
+- Added logo asset: `public/assets/logos/lsfp-email-logo.png`.
+
+After uploading the website ZIP to Vercel, also copy the updated `apps-script/Code.gs` into Apps Script and deploy a new Web App version.

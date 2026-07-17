@@ -64,11 +64,11 @@ if (familyForm && formStatus) {
       return;
     }
 
-    formStatus.textContent = "Pieteikums tiek nosūtīts…";
+    formStatus.textContent = 'Paldies, pieteikums saņemts. Dalības apstiprinājumu saņemsiet norādītajā e-pastā.';
     formStatus.style.color = "#1597c4";
 
     window.setTimeout(function () {
-      formStatus.textContent = "Paldies! Pieteikums ir nosūtīts.";
+      formStatus.textContent = 'Paldies, pieteikums saņemts. Dalības apstiprinājumu saņemsiet norādītajā e-pastā.';
       formStatus.style.color = "#22b86f";
       familyForm.reset();
     }, 1100);
