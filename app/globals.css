@@ -3594,11 +3594,11 @@ img[src*="co-funded"] {
 }
 .finance-stack {
   min-height: 88px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: nowrap;
+  justify-items: center;
+  gap: 16px;
 }
 .org-logo {
   display: block;
@@ -3616,8 +3616,8 @@ img[src*="co-funded"] {
   height: 62px;
 }
 .finance-stack .org-logo {
-  flex: 0 1 auto;
   min-width: 0;
+  max-width: 100%;
 }
 .footer-partners-grid-wrap {
   margin-top: 24px;
@@ -3774,7 +3774,7 @@ img[src*="co-funded"] {
   .partner-logo-tile img,
   .org-logo { height: 56px; max-height: 56px; }
   .finance-stack {
-    flex-wrap: wrap;
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
