@@ -337,12 +337,8 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="footer-logo-block">
       <span class="partner-label">Līdzfinansē</span>
       <div class="finance-stack">
-      <div class="logo-panel finance-panel">
       <img class="org-logo org-logo--eu" src="/assets/logos/eu-finanse-new.png" alt="Līdzfinansē Eiropas Savienība" />
-      </div>
-      <div class="logo-panel finance-panel">
       <img class="org-logo org-logo--izm" src="/assets/logos/izm-crest-new.png" alt="Izglītības un zinātnes ministrija" />
-      </div>
       </div>
       </div>
       <div class="footer-logo-block">
