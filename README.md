@@ -217,3 +217,6 @@ After uploading the website ZIP to Vercel, also copy the updated `apps-script/Co
 ## Latest footer update
 - Aligned “Koordinē” and “Atbalsta” labels in the footer logo block.
 - Reduced the EU co-funding logo and disclaimer/reference text significantly.
+
+
+Updated footer structure with Koordinē / Līdzfinansē / Atbalsta / Partneri sections and equal-sized partner logos.

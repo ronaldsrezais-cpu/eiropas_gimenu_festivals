@@ -317,7 +317,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <footer class="site-footer">
       <div class="footer-top">
       <div>
-      <strong>Home & Heart</strong>
+      <strong>Home &amp; Heart</strong>
       <p>Eiropas Ģimeņu festivāls · Uzvaras parks, Rīga · 22. augusts 2026</p>
       </div>
       <div class="footer-contacts" aria-label="Kontaktinformācija">
@@ -327,18 +327,46 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <span>Tālrunis: +371 68622302</span>
       </div>
       </div>
-      <div class="footer-partners" aria-label="Festivāla koordinētāji un atbalstītāji">
-      <div class="partner-item">
+      <div class="footer-org-grid" aria-label="Festivāla sadarbības partneru informācija">
+      <div class="footer-logo-block">
       <span class="partner-label">Koordinē</span>
-      <img class="partner-logo partner-logo--lsfp" src="assets/logos/lsfp-logo-new.png" alt="Latvijas Sporta federāciju padome" />
+      <div class="logo-panel single-panel">
+      <img class="org-logo org-logo--lsfp" src="/assets/logos/lsfp-logo-new.png" alt="Latvijas Sporta federāciju padome" />
       </div>
-      <div class="partner-item partner-item--support">
+      </div>
+      <div class="footer-logo-block">
+      <span class="partner-label">Līdzfinansē</span>
+      <div class="finance-stack">
+      <div class="logo-panel finance-panel">
+      <img class="org-logo org-logo--eu" src="/assets/logos/eu-finanse-new.png" alt="Līdzfinansē Eiropas Savienība" />
+      </div>
+      <div class="logo-panel finance-panel">
+      <img class="org-logo org-logo--izm" src="/assets/logos/izm-crest-new.png" alt="Izglītības un zinātnes ministrija" />
+      </div>
+      </div>
+      </div>
+      <div class="footer-logo-block">
       <span class="partner-label">Atbalsta</span>
-      <img class="partner-logo partner-logo--izm-full" src="/assets/logos/izm-logo-new.png" alt="Izglītības un zinātnes ministrija" />
+      <div class="logo-panel single-panel">
+      <img class="org-logo org-logo--support" src="/assets/logos/win-win-sport.png" alt="WIN WIN SPORT" />
       </div>
       </div>
-      <div class="eu-note eu-disclaimer">
-      <img class="eu-logo" src="/assets/logos/eu-finanse-white-outline.png" alt="Līdzfinansē Eiropas Savienība" />
+      </div>
+      <div class="footer-partners-grid-wrap">
+      <span class="partner-label">Partneri</span>
+      <div class="partners-grid">
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-moderna-pieccina.png" alt="Modernās pieccīņas un šķēršļu skriešanas federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-lamsf-trials.png" alt="Latvijas Motosporta federācija Triāls" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-sailing-latvia.png" alt="Sailing Latvia" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-jiu-jitsu.png" alt="Latvijas Džiu-džitsu Federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-gtf.png" alt="GTF" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-kendo.png" alt="Latvijas Kendo federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-lfs.png" alt="LFS" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-llsf.png" alt="LLSF" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-lpk.png" alt="LPK" /></div>
+      </div>
+      </div>
+      <div class="eu-note footer-legal">
       <p>Finansē Eiropas Savienība. Tomēr paustie uzskati un viedokļi ir tikai autora(-u) uzskati un viedokļi, un tie ne vienmēr atspoguļo Eiropas Savienības vai Eiropas Izglītības un kultūras izpildaģentūras (EACEA) viedokli. Ne Eiropas Savienība, ne EACEA par tiem neatbild.</p>
       </div>
       </footer>`; export default function Page() { return ( <>
