@@ -18,3 +18,8 @@ Changed files:
 - `app/globals.css` — added thank-you page styling.
 
 Thank-you page URL: `https://www.gimenufestivals.lv/paldies`
+
+Redirect fix:
+- Apps Script response now uses HtmlService with ALLOWALL so the hidden iframe can postMessage back to the website after successful submit.
+- script.js now redirects to /paldies only when that OK postMessage is received.
+- Added final CSS override so EK and IZM logos remain side by side despite earlier footer CSS duplicates.

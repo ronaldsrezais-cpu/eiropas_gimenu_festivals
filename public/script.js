@@ -11,6 +11,8 @@ function pad(value) {
 }
 
 function tick() {
+  if (!fields.days || !fields.hours || !fields.minutes || !fields.seconds) return;
+
   const distance = Math.max(0, target - Date.now());
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
@@ -23,8 +25,10 @@ function tick() {
   fields.seconds.textContent = pad(seconds);
 }
 
-tick();
-setInterval(tick, 1000);
+if (fields.days && fields.hours && fields.minutes && fields.seconds) {
+  tick();
+  setInterval(tick, 1000);
+}
 
 const header = document.querySelector('.site-header');
 const menuButton = document.querySelector('.menu-button');

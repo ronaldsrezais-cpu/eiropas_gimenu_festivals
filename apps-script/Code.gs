@@ -248,9 +248,9 @@ function jsonResponse_(payload) {
     'window.parent.postMessage(' + JSON.stringify(Object.assign({ source: 'familyRegistrationForm' }, payload)) + ', "*");' +
     '</script></body></html>';
 
-  return ContentService
-    .createTextOutput(html)
-    .setMimeType(ContentService.MimeType.HTML);
+  return HtmlService
+    .createHtmlOutput(html)
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
 function escapeHtml_(value) {

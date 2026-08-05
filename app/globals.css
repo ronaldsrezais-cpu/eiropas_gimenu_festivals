@@ -3814,3 +3814,34 @@ img[src*="co-funded"] {
   margin: 0 auto 24px;
   max-width: 620px;
 }
+
+/* Final footer funding-logo override: keep EK and IZM side by side */
+.site-footer .finance-stack {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, .75fr) !important;
+  align-items: center !important;
+  justify-items: center !important;
+  gap: 18px !important;
+  min-height: 88px !important;
+}
+.site-footer .finance-stack .org-logo {
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+}
+.site-footer .finance-stack .org-logo--eu,
+.site-footer .finance-stack .org-logo--izm {
+  height: 62px !important;
+  max-height: 62px !important;
+}
+@media (max-width: 640px) {
+  .site-footer .finance-stack {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, .8fr) !important;
+    gap: 12px !important;
+  }
+  .site-footer .finance-stack .org-logo--eu,
+  .site-footer .finance-stack .org-logo--izm {
+    height: 48px !important;
+    max-height: 48px !important;
+  }
+}
