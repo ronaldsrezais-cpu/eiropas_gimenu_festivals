@@ -48,7 +48,18 @@ document.querySelectorAll('.main-nav a').forEach(link => {
 // Custom family registration form helper
 const familyForm = document.getElementById("familyRegistrationForm");
 const formStatus = document.getElementById("formStatus");
+const hiddenSubmitFrame = document.querySelector('iframe[name="hiddenSubmitFrame"]');
 let registrationSubmissionInProgress = false;
+let registrationRedirectStarted = false;
+let registrationIframeFallbackTimer = null;
+let registrationSubmissionTimeout = null;
+
+function redirectToThankYouPage() {
+  if (registrationRedirectStarted) return;
+  registrationRedirectStarted = true;
+  registrationSubmissionInProgress = false;
+  window.location.href = "/paldies";
+}
 
 if (familyForm && formStatus) {
   familyForm.addEventListener("submit", function (event) {
@@ -73,23 +84,48 @@ if (familyForm && formStatus) {
 
     syncBarrierAnswers();
     registrationSubmissionInProgress = true;
+    registrationRedirectStarted = false;
     formStatus.textContent = "Nosūtām pieteikumu...";
     formStatus.style.color = "#1597c4";
+
+    window.clearTimeout(registrationIframeFallbackTimer);
+    window.clearTimeout(registrationSubmissionTimeout);
+    registrationSubmissionTimeout = window.setTimeout(function () {
+      if (!registrationSubmissionInProgress || registrationRedirectStarted) return;
+      registrationSubmissionInProgress = false;
+      formStatus.textContent = "Pieteikumu neizdevās nosūtīt. Lūdzu, pārbaudiet interneta savienojumu un mēģiniet vēlreiz.";
+      formStatus.style.color = "#d84d39";
+    }, 30000);
   });
 
   window.addEventListener("message", function (event) {
     const data = event.data || {};
     if (!registrationSubmissionInProgress || data.source !== "familyRegistrationForm") return;
 
-    registrationSubmissionInProgress = false;
+    window.clearTimeout(registrationIframeFallbackTimer);
+    window.clearTimeout(registrationSubmissionTimeout);
 
     if (data.ok === true) {
-      window.location.href = "/paldies";
+      redirectToThankYouPage();
       return;
     }
 
+    registrationSubmissionInProgress = false;
     formStatus.textContent = data.message || "Pieteikumu neizdevās nosūtīt. Lūdzu, mēģiniet vēlreiz.";
     formStatus.style.color = "#d84d39";
+  });
+
+  // Fallback for Google Apps Script iframe submissions when postMessage is blocked or an older script version is still deployed.
+  // This runs only after the hidden iframe finishes loading a submitted response, not on button click or validation errors.
+  hiddenSubmitFrame?.addEventListener("load", function () {
+    if (!registrationSubmissionInProgress || registrationRedirectStarted) return;
+
+    window.clearTimeout(registrationIframeFallbackTimer);
+    registrationIframeFallbackTimer = window.setTimeout(function () {
+      if (!registrationSubmissionInProgress || registrationRedirectStarted) return;
+      window.clearTimeout(registrationSubmissionTimeout);
+      redirectToThankYouPage();
+    }, 500);
   });
 }
 
