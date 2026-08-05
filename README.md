@@ -6,3 +6,15 @@ Updated footer logo layout:
 
 
 Includes Vercel Web Analytics: @vercel/analytics dependency and <Analytics /> in app/layout.js.
+
+
+## Meta Pixel and thank-you page update
+
+Changed files:
+- `app/layout.js` — added Meta Pixel base code in the shared `<head>`.
+- `app/paldies/page.js` — added the `/paldies` thank-you page with `robots: noindex` and the Meta Pixel Lead event.
+- `public/script.js` — redirects to `/paldies` only after the form backend posts an OK response.
+- `apps-script/Code.gs` — returns a hidden-iframe `postMessage` response with OK/error status.
+- `app/globals.css` — added thank-you page styling.
+
+Thank-you page URL: `https://www.gimenufestivals.lv/paldies`

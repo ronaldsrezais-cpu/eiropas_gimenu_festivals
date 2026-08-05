@@ -244,9 +244,13 @@ function joinMulti_(params, allParams, keys) {
 }
 
 function jsonResponse_(payload) {
+  const html = '<!doctype html><html><body><script>' +
+    'window.parent.postMessage(' + JSON.stringify(Object.assign({ source: 'familyRegistrationForm' }, payload)) + ', "*");' +
+    '</script></body></html>';
+
   return ContentService
-    .createTextOutput(JSON.stringify(payload))
-    .setMimeType(ContentService.MimeType.JSON);
+    .createTextOutput(html)
+    .setMimeType(ContentService.MimeType.HTML);
 }
 
 function escapeHtml_(value) {

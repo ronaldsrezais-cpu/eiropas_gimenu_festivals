@@ -3778,3 +3778,39 @@ img[src*="co-funded"] {
     gap: 12px;
   }
 }
+
+
+/* Thank-you page */
+.thank-you-page {
+  min-height: 62vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(243, 207, 63, .20), transparent 26%),
+    radial-gradient(circle at 88% 18%, rgba(21, 151, 196, .16), transparent 28%),
+    #fff7e8;
+}
+
+.thank-you-card {
+  width: min(840px, 100%);
+  background: #ffffff;
+  border: 1px solid rgba(38, 51, 59, .08);
+  border-radius: 30px;
+  padding: clamp(28px, 5vw, 58px);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.thank-you-card h1 {
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: .98;
+  letter-spacing: -.05em;
+  margin: 16px 0 14px;
+}
+
+.thank-you-card p {
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 22px);
+  margin: 0 auto 24px;
+  max-width: 620px;
+}

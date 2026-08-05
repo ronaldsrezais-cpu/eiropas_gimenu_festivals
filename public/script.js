@@ -44,6 +44,7 @@ document.querySelectorAll('.main-nav a').forEach(link => {
 // Custom family registration form helper
 const familyForm = document.getElementById("familyRegistrationForm");
 const formStatus = document.getElementById("formStatus");
+let registrationSubmissionInProgress = false;
 
 if (familyForm && formStatus) {
   familyForm.addEventListener("submit", function (event) {
@@ -52,6 +53,7 @@ if (familyForm && formStatus) {
 
     if (selectedAgeGroups.length === 0) {
       event.preventDefault();
+      registrationSubmissionInProgress = false;
       formStatus.textContent = "Lūdzu, izvēlieties vismaz vienu bērnu vecuma grupu.";
       formStatus.style.color = "#d84d39";
       return;
@@ -59,19 +61,31 @@ if (familyForm && formStatus) {
 
     if (action.includes("PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE")) {
       event.preventDefault();
+      registrationSubmissionInProgress = false;
       formStatus.textContent = "Forma vēl nav pieslēgta Google Sheets. Lūdzu, ievietojiet Google Apps Script Web App URL.";
       formStatus.style.color = "#d84d39";
       return;
     }
 
-    formStatus.textContent = 'Paldies, pieteikums saņemts. Dalības apstiprinājumu saņemsiet norādītajā e-pastā.';
+    syncBarrierAnswers();
+    registrationSubmissionInProgress = true;
+    formStatus.textContent = "Nosūtām pieteikumu...";
     formStatus.style.color = "#1597c4";
+  });
 
-    window.setTimeout(function () {
-      formStatus.textContent = 'Paldies, pieteikums saņemts. Dalības apstiprinājumu saņemsiet norādītajā e-pastā.';
-      formStatus.style.color = "#22b86f";
-      familyForm.reset();
-    }, 1100);
+  window.addEventListener("message", function (event) {
+    const data = event.data || {};
+    if (!registrationSubmissionInProgress || data.source !== "familyRegistrationForm") return;
+
+    registrationSubmissionInProgress = false;
+
+    if (data.ok === true) {
+      window.location.href = "/paldies";
+      return;
+    }
+
+    formStatus.textContent = data.message || "Pieteikumu neizdevās nosūtīt. Lūdzu, mēģiniet vēlreiz.";
+    formStatus.style.color = "#d84d39";
   });
 }
 
