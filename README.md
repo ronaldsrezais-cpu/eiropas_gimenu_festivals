@@ -31,3 +31,6 @@ Final footer logo cleanup: added Krosmintons, Handbols, Riteņbraukšana and Ša
 
 
 Update: Rīgas valstspilsētas pašvaldības policijas logo deduplicated so it appears only once in the support section on each page.
+
+
+Update: fixed support-rigas-mezi.jpg so the support section now shows the actual Rīgas Meži logo instead of a duplicate police logo.
