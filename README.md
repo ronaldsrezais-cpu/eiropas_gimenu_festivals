@@ -23,3 +23,5 @@ Redirect fix:
 - Apps Script response now uses HtmlService with ALLOWALL so the hidden iframe can postMessage back to the website after successful submit.
 - script.js now redirects to /paldies only when that OK postMessage is received.
 - Added final CSS override so EK and IZM logos remain side by side despite earlier footer CSS duplicates.
+
+Update: Added full partner/support logo set and increased the European Union co-financing and IZM logos in the footer.
