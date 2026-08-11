@@ -70,25 +70,46 @@ const pageHtml = `<header class="site-header" id="top">
       <img class="org-logo org-logo--izm" src="/assets/logos/izm-crest-new.png" alt="Izglītības un zinātnes ministrija" />
       </div>
       </div>
-      <div class="footer-logo-block">
+      <div class="footer-logo-block footer-logo-block--support">
       <span class="partner-label">Atbalsta</span>
-      <div class="logo-panel single-panel">
-      <img class="org-logo org-logo--support" src="/assets/logos/win-win-sport.png" alt="WIN WIN SPORT" />
+      <div class="support-grid">
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/win-win-sport.png" alt="WIN WIN SPORT" /></div>
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-barbora.png" alt="Barbora" /></div>
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-tervete.png" alt="Dabas parks Tērvete" /></div>
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-rigas-mezi.jpg" alt="Rīgas Meži" /></div>
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-riga-policija.png" alt="Rīgas valstspilsētas pašvaldības policija" /></div>
       </div>
       </div>
       </div>
       <div class="footer-partners-grid-wrap">
       <span class="partner-label">Partneri</span>
       <div class="partners-grid">
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-moderna-pieccina.png" alt="Modernās pieccīņas un šķēršļu skriešanas federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-ielu-vingrotaji.jpg" alt="Ielu Vingrotāji" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-vieglatletika.png" alt="Latvijas Vieglatlētikas savienība" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-kamaninu-sports.png" alt="Latvijas Kamaniņu sporta federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-alpinistu-savieniba.png" alt="Latvijas Alpīnistu savienība" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-moderna-pieccina.png" alt="Latvijas Modernās pieccīņas un šķēršļu skriešanas federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-llsf.png" alt="Latvijas Loka šaušanas federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-novuss.png" alt="Latvijas Novusa federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-lamsf-trials.png" alt="Latvijas Motosporta federācija Triāls" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-peldesana.png" alt="Latvijas Peldēšanas federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-lpk.png" alt="Latvijas Paralimpiskā komiteja" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-gtf.png" alt="Latvijas Galda tenisa federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-krosmintons.png" alt="Latvijas Krosmintona federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-sausana.png" alt="Latvijas Šaušanas federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-sailing-latvia.png" alt="Sailing Latvia" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-jiu-jitsu.png" alt="Latvijas Džiu-džitsu Federācija" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-gtf.png" alt="GTF" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-kerlings.jpg" alt="Latvijas Kērlinga asociācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-sporta-joga.png" alt="Latvijas Sporta jogas federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-jiu-jitsu.png" alt="Latvijas Džiu-džitsu federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-kendo.png" alt="Latvijas Kendo federācija" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-lfs.png" alt="LFS" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-llsf.png" alt="LLSF" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-lpk.png" alt="LPK" /></div>
+      <div class="partner-logo-tile partner-logo-tile--dark"><img src="/assets/logos/partner-disku-sports.png" alt="Latvijas Disku sportu savienība" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-handbols.png" alt="Latvijas Handbola federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-darts.png" alt="Latvijas Darts organizācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-boulings.png" alt="Latvijas Boulinga federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-sporta-cinas.png" alt="Latvijas Sporta cīņas federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-ritenbrauksana.png" alt="Latvijas Riteņbraukšanas federācija" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-gracijas.png" alt="Sporta grāciju federācijas logo" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-lfs.png" alt="Latvijas Florbola savienība" /></div>
       </div>
       </div>
       <div class="eu-note footer-legal">

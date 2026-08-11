@@ -25,3 +25,6 @@ Redirect fix:
 - Added final CSS override so EK and IZM logos remain side by side despite earlier footer CSS duplicates.
 
 Update: Added full partner/support logo set and increased the European Union co-financing and IZM logos in the footer.
+
+
+Final footer logo cleanup: added Krosmintons, Handbols, Riteņbraukšana and Šaušana logos; removed Sērfošanas/SUP logo; improved LDSS/LHF visibility; normalized partner logo sizing; reduced empty white space in Koordinē/Līdzfinansē blocks.

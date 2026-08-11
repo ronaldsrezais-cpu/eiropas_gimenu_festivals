@@ -3932,3 +3932,105 @@ img[src*="co-funded"] {
     max-height: 58px !important;
   }
 }
+
+
+/* Final logo layout cleanup */
+.site-footer .footer-org-grid {
+  align-items: start !important;
+}
+.site-footer .footer-logo-block {
+  align-self: start !important;
+}
+.site-footer .logo-panel,
+.site-footer .finance-stack {
+  min-height: 96px !important;
+}
+.site-footer .finance-stack {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, .95fr) !important;
+  gap: 24px !important;
+  align-items: center !important;
+  justify-items: center !important;
+}
+.site-footer .finance-stack .org-logo--eu,
+.site-footer .finance-stack .org-logo--izm {
+  height: 96px !important;
+  max-height: 96px !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+.site-footer .finance-stack .org-logo--eu { justify-self: end !important; }
+.site-footer .finance-stack .org-logo--izm { justify-self: start !important; }
+.site-footer .support-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px 12px !important;
+}
+.site-footer .support-logo-tile,
+.site-footer .support-logo-tile--wide {
+  grid-column: auto !important;
+  min-height: 74px !important;
+}
+.site-footer .support-logo-tile .org-logo {
+  height: 56px !important;
+  max-height: 56px !important;
+  width: 100% !important;
+  object-fit: contain !important;
+}
+.site-footer .partners-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+  gap: 14px 18px !important;
+  align-items: center !important;
+}
+.site-footer .partner-logo-tile {
+  min-height: 104px !important;
+  height: 104px !important;
+  padding: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+.site-footer .partner-logo-tile img {
+  width: auto !important;
+  max-width: 96% !important;
+  height: auto !important;
+  max-height: 78px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+.site-footer .partner-logo-tile--dark {
+  background: #243443 !important;
+  border-radius: 16px !important;
+  padding: 12px !important;
+}
+@media (max-width: 900px) {
+  .site-footer .finance-stack .org-logo--eu,
+  .site-footer .finance-stack .org-logo--izm {
+    height: 78px !important;
+    max-height: 78px !important;
+  }
+  .site-footer .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  .site-footer .finance-stack {
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, .9fr) !important;
+    gap: 14px !important;
+  }
+  .site-footer .finance-stack .org-logo--eu,
+  .site-footer .finance-stack .org-logo--izm {
+    height: 58px !important;
+    max-height: 58px !important;
+  }
+  .site-footer .partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .site-footer .partner-logo-tile {
+    height: 92px !important;
+    min-height: 92px !important;
+  }
+  .site-footer .partner-logo-tile img {
+    max-height: 66px !important;
+  }
+}
