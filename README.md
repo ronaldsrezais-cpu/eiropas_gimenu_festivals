@@ -28,3 +28,6 @@ Update: Added full partner/support logo set and increased the European Union co-
 
 
 Final footer logo cleanup: added Krosmintons, Handbols, Riteņbraukšana and Šaušana logos; removed Sērfošanas/SUP logo; improved LDSS/LHF visibility; normalized partner logo sizing; reduced empty white space in Koordinē/Līdzfinansē blocks.
+
+
+Update: Rīgas valstspilsētas pašvaldības policijas logo deduplicated so it appears only once in the support section on each page.
