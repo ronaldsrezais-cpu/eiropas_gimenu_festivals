@@ -34,3 +34,6 @@ Update: Rīgas valstspilsētas pašvaldības policijas logo deduplicated so it a
 
 
 Update: fixed support-rigas-mezi.jpg so the support section now shows the actual Rīgas Meži logo instead of a duplicate police logo.
+
+
+Update: removed the SUP activity card and added three support logos (Jaunatnes starptautisko programmu aģentūra, Valsts izglītības attīstības aģentūra, Latvijas Antidopinga birojs) to the Atbalsta section. Support logo assets were trimmed for better sizing and visibility.

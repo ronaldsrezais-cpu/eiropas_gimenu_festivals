@@ -78,6 +78,9 @@ const pageHtml = `<header class="site-header" id="top">
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-tervete.png" alt="Dabas parks Tērvete" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-rigas-mezi.jpg" alt="Rīgas Meži" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-riga-policija.png" alt="Rīgas valstspilsētas pašvaldības policija" /></div>
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-jspa.png" alt="Jaunatnes starptautisko programmu aģentūra" /></div>
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-viaa.png" alt="Valsts izglītības attīstības aģentūra" /></div>
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-antidopings.png" alt="Latvijas Antidopinga birojs" /></div>
       </div>
       </div>
       </div>
