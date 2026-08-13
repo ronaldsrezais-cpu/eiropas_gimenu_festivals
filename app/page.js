@@ -357,7 +357,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="footer-partners-grid-wrap">
       <span class="partner-label">Partneri</span>
       <div class="partners-grid">
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-ielu-vingrotaji.jpg" alt="Ielu Vingrotāji" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-ielu-vingrotaji.png" alt="Ielu Vingrotāji" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-vieglatletika.png" alt="Latvijas Vieglatlētikas savienība" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-kamaninu-sports.png" alt="Latvijas Kamaniņu sporta federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-alpinistu-savieniba.png" alt="Latvijas Alpīnistu savienība" /></div>
@@ -375,7 +375,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="partner-logo-tile"><img src="/assets/logos/partner-sporta-joga.png" alt="Latvijas Sporta jogas federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-jiu-jitsu.png" alt="Latvijas Džiu-džitsu federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-kendo.png" alt="Latvijas Kendo federācija" /></div>
-      <div class="partner-logo-tile partner-logo-tile--dark"><img src="/assets/logos/partner-disku-sports.png" alt="Latvijas Disku sportu savienība" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-disku-sports.png" alt="Latvijas Disku sportu savienība" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-handbols.png" alt="Latvijas Handbola federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-darts.png" alt="Latvijas Darts organizācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-boulings.png" alt="Latvijas Boulinga federācija" /></div>
