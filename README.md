@@ -39,3 +39,6 @@ Update: fixed support-rigas-mezi.jpg so the support section now shows the actual
 Update: removed the SUP activity card and added three support logos (Jaunatnes starptautisko programmu aģentūra, Valsts izglītības attīstības aģentūra, Latvijas Antidopinga birojs) to the Atbalsta section. Support logo assets were trimmed for better sizing and visibility.
 
 Update: Pasākuma karte section now uses the uploaded festival territory map image, and the registration intro text no longer includes “Iepriekšēja reģistrācija iespējama līdz 18. augustam”.
+
+
+Update: Changed map section text to “Uzvaras parks”, removed Google Maps link/text, and made the event map image fill the full section width.

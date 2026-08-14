@@ -4073,3 +4073,40 @@ img[src*="co-funded"] {
     min-height: 260px;
   }
 }
+
+
+/* Full-width event map section */
+.map-section-full {
+  display: block !important;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+}
+
+.map-section-full .map-copy {
+  margin-bottom: 18px;
+  max-width: none;
+}
+
+.map-section-full .map-copy h2 {
+  margin: 12px 0 0;
+}
+
+.map-section-full .festival-map-embed {
+  width: 100%;
+  min-height: 0 !important;
+  border-radius: 32px;
+}
+
+.map-section-full .festival-map-embed img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0 !important;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .map-section-full .festival-map-embed {
+    border-radius: 22px;
+  }
+}
