@@ -4133,3 +4133,21 @@ img[src*="co-funded"] {
     max-width: 100%;
   }
 }
+
+
+/* Map 30% smaller than previous version */
+.map-section-full .festival-map-embed {
+  max-width: 826px !important;
+  margin: 0 auto !important;
+}
+
+.map-section-full .festival-map-embed img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 900px) {
+  .map-section-full .festival-map-embed {
+    max-width: 100% !important;
+  }
+}

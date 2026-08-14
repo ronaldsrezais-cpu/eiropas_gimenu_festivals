@@ -45,3 +45,6 @@ Update: Changed map section text to “Uzvaras parks”, removed Google Maps lin
 
 
 Update: Made the event map slightly smaller and centered within the map section.
+
+
+Update: Made the event map 30% smaller than the previous version and kept it centered.
