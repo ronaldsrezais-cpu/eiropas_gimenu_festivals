@@ -42,3 +42,6 @@ Update: Pasākuma karte section now uses the uploaded festival territory map ima
 
 
 Update: Changed map section text to “Uzvaras parks”, removed Google Maps link/text, and made the event map image fill the full section width.
+
+
+Update: Made the event map slightly smaller and centered within the map section.
