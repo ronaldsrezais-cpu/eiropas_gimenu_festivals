@@ -168,8 +168,8 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <p>Precīzs aktivitāšu zonu izvietojums tiks pievienots tuvāk pasākumam.</p>
       <a class="button secondary" href="https://maps.google.com/?q=Uzvaras+parks+Riga" target="_blank" rel="noreferrer">Atvērt Google Maps</a>
       </div>
-      <div class="map-embed" aria-label="Uzvaras parks Google Maps kartē">
-      <iframe title="Uzvaras parks, Rīga" src="https://maps.google.com/maps?q=Uzvaras%20parks%2C%20R%C4%ABga%2C%20Latvija&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="map-embed festival-map-embed" aria-label="Eiropas Ģimeņu festivāla teritorijas plāns">
+      <img src="/assets/map/festival-map.png" alt="Eiropas Ģimeņu festivāla teritorijas plāns Uzvaras parkā" loading="lazy" />
       </div>
       </section>
       <section class="section-pad registration" id="registracija">
@@ -177,7 +177,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div>
       <span class="section-label">Reģistrācija</span>
       <h2>Piesakiet ģimeni iepriekš</h2>
-      <p><strong>Iepriekšēja reģistrācija iespējama līdz 18. augustam.</strong><br /><strong>Kartīšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās garantēs aktivitāšu kartītes saņemšanu.</strong><br />Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas, kamēr aktivitāšu kartītes būs pieejamas.</p>
+      <p><strong>Kartīšu skaits ir ierobežots, tāpēc iepriekšēja pieteikšanās garantēs aktivitāšu kartītes saņemšanu.</strong><br />Ja nepaspējat pieteikties iepriekš, ģimene varēs reģistrēties arī pasākuma dienā uz vietas, kamēr aktivitāšu kartītes būs pieejamas.</p>
       <div class="form-intro-badge">Aizpildiet pieteikuma formu zemāk</div>
       <div class="custom-form-card">
       <form id="familyRegistrationForm" class="family-form" action="https://script.google.com/macros/s/AKfycbxFtZrMEgK9_B-xh4XpjXexUlBgRDSMigatcYA2XWigpNODxs3Y58mFv2AC5QNIeNewSg/exec" method="POST" target="hiddenSubmitFrame">
