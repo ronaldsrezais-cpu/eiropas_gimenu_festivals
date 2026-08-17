@@ -48,3 +48,8 @@ Update: Made the event map slightly smaller and centered within the map section.
 
 
 Update: Made the event map 30% smaller than the previous version and kept it centered.
+
+
+Update: Changed the free participation practical-info text and added a LIDO catering note under “Pirms došanās uz festivālu”.
+
+Added LIDO logo as the first item in the Atbalsta section.

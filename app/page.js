@@ -302,11 +302,15 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       </div>
       <div>
       <h3>Vai dalība ir bez maksas?</h3>
-      <p>Jā. Festivāla apmeklējums un aktivitātes apmeklētājiem paredzētas bez maksas.</p>
+      <p>Jā. Dalība festivālā ir bez maksas.</p>
       </div>
       <div>
       <h3>Ko ņemt līdzi?</h3>
       <p>Ērtu apģērbu, ūdens pudeli un laikapstākļiem piemērotas lietas. Pārējais — labs noskaņojums.</p>
+      </div>
+      <div>
+      <h3>Ēdināšana festivālā</h3>
+      <p>Par gardām maltītēm festivāla dienā rūpēsies pasākuma oficiālais partneris LIDO, lai ģimenēm starp sportiskajām aktivitātēm būtu iespēja arī kopīgi ieturēt maltīti un atgūt enerģiju.</p>
       </div>
       </div>
       </section>
@@ -341,6 +345,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="footer-logo-block footer-logo-block--support">
       <span class="partner-label">Atbalsta</span>
       <div class="support-grid">
+      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-lido.png" alt="LIDO" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/win-win-sport.png" alt="WIN WIN SPORT" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-barbora.png" alt="Barbora" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-tervete.png" alt="Dabas parks Tērvete" /></div>
