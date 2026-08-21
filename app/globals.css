@@ -4151,3 +4151,69 @@ img[src*="co-funded"] {
     max-width: 100% !important;
   }
 }
+
+
+/* Postponement notice */
+.postponement-alert {
+  padding: 32px clamp(18px, 4vw, 64px) 0;
+  background: var(--cream);
+}
+
+.postponement-alert__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #fff3d7 0%, #ffffff 100%);
+  border: 2px solid rgba(239, 111, 89, .35);
+  box-shadow: var(--shadow);
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.postponement-alert__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #ef6f59;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.postponement-alert__inner h2 {
+  margin: 0 0 16px;
+  color: #243443;
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+}
+
+.postponement-alert__inner p {
+  margin: 12px 0 0;
+  max-width: 980px;
+  color: #243443;
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.postponement-alert__inner a {
+  color: #1597c4;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .postponement-alert {
+    padding-top: 22px;
+  }
+
+  .postponement-alert__inner {
+    border-radius: 24px;
+  }
+}

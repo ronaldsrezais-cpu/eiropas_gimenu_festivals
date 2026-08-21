@@ -27,6 +27,15 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <button class="menu-button" aria-label="Atvērt izvēlni" aria-expanded="false">☰</button>
       </header>
       <main>
+      <section class="postponement-alert" aria-label="Svarīgs paziņojums par festivālu">
+      <div class="postponement-alert__inner">
+      <span class="postponement-alert__label">Svarīgs paziņojums</span>
+      <h2>Eiropas Ģimeņu festivāls “Home &amp; Heart” 22. augustā Uzvaras parkā nenotiks</h2>
+      <p>Ņemot vērā nelabvēlīgo laikapstākļu prognozi un rūpējoties par festivāla apmeklētāju, dalībnieku un iesaistīto organizāciju drošību, Eiropas Ģimeņu festivāls “Home &amp; Heart” 22. augustā Uzvaras parkā nenotiks.</p>
+      <p>Festivāls tiks pārcelts uz citu datumu, par kuru informēsim tuvākajā laikā.</p>
+      <p>Lūdzu, sekojiet līdzi aktuālajai informācijai mūsu sociālo tīklu kanālos un festivāla mājaslapā: <a href="https://www.gimenufestivals.lv">www.gimenufestivals.lv</a></p>
+      </div>
+      </section>
       <section class="hero section-pad" id="par-festivalu">
       <div class="shape shape-yellow"></div>
       <div class="shape shape-blue"></div>

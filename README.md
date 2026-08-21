@@ -53,3 +53,6 @@ Update: Made the event map 30% smaller than the previous version and kept it cen
 Update: Changed the free participation practical-info text and added a LIDO catering note under “Pirms došanās uz festivālu”.
 
 Added LIDO logo as the first item in the Atbalsta section.
+
+
+Update: Added a prominent homepage notice that the European Family Festival “Home & Heart” will not take place on 22 August in Uzvaras parks and will be postponed to another date.
