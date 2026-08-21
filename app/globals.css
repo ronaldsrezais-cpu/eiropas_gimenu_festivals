@@ -4217,3 +4217,20 @@ img[src*="co-funded"] {
     border-radius: 24px;
   }
 }
+
+
+/* Temporary notice-only mode */
+.site-header .main-nav,
+.site-header .nav-cta {
+  display: none !important;
+}
+
+.postponement-alert {
+  padding-bottom: 42px;
+}
+
+@media (max-width: 700px) {
+  .site-header .header-actions {
+    display: flex !important;
+  }
+}

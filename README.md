@@ -56,3 +56,6 @@ Added LIDO logo as the first item in the Atbalsta section.
 
 
 Update: Added a prominent homepage notice that the European Family Festival “Home & Heart” will not take place on 22 August in Uzvaras parks and will be postponed to another date.
+
+
+Update: Temporarily hidden all main page sections below the postponement notice. The footer contacts and partner/support sections remain visible.
