@@ -47,7 +47,7 @@ const pageHtml = `<header class="site-header" id="top">
       <div class="footer-top">
       <div>
       <strong>Home &amp; Heart</strong>
-      <p>Eiropas Ģimeņu festivāls · Uzvaras parks, Rīga · 22. augusts 2026</p>
+      <p>Eiropas Ģimeņu festivāls · Uzvaras parks, Rīga · 19. septembris 2026</p>
       </div>
       <div class="footer-contacts" aria-label="Kontaktinformācija">
       <strong>Kontakti</strong>

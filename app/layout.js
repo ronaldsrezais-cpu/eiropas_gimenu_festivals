@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Eiropas Ģimeņu festivāls | Home & Heart",
-  description: "Eiropas Ģimeņu festivāls Rīgā – bezmaksas aktivitāšu diena ģimenēm Uzvaras parkā 2026. gada 22. augustā.",
+  description: "Eiropas Ģimeņu festivāls Rīgā – bezmaksas aktivitāšu diena ģimenēm Uzvaras parkā 2026. gada 19. septembrī.",
 };
 
 export default function RootLayout({ children }) {

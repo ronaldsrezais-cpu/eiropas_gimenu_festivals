@@ -1,4 +1,4 @@
-const target = new Date('2026-08-22T00:00:00+03:00').getTime();
+const target = new Date('2026-09-19T00:00:00+03:00').getTime();
 const fields = {
   days: document.getElementById('days'),
   hours: document.getElementById('hours'),
@@ -82,7 +82,6 @@ if (familyForm && formStatus) {
       return;
     }
 
-    syncBarrierAnswers();
     registrationSubmissionInProgress = true;
     registrationRedirectStarted = false;
     formStatus.textContent = "Nosūtām pieteikumu...";
@@ -138,42 +137,3 @@ logoBrand?.addEventListener('click', function (event) {
   menuButton?.setAttribute('aria-expanded', 'false');
 });
 
-
-// Limit barrier question to max two selected answers
-const barrierInputs = Array.from(document.querySelectorAll('input[name="aktivitate_skersli"]'));
-barrierInputs.forEach(input => {
-  input.addEventListener('change', () => {
-    const selected = barrierInputs.filter(item => item.checked);
-    if (selected.length > 2) {
-      input.checked = false;
-      alert('Lūdzu, izvēlieties ne vairāk kā divas atbildes.');
-    }
-  });
-});
-
-
-// Store all selected barrier answers in one hidden field before submitting
-function syncBarrierAnswers() {
-  const checked = Array.from(document.querySelectorAll('input[name="aktivitate_skersli"]:checked'))
-    .map(input => input.value)
-    .filter(Boolean);
-
-  const form = document.querySelector('.family-form');
-  if (!form) return;
-
-  let hidden = form.querySelector('input[name="aktivitate_skersli_selected"]');
-  if (!hidden) {
-    hidden = document.createElement('input');
-    hidden.type = 'hidden';
-    hidden.name = 'aktivitate_skersli_selected';
-    form.appendChild(hidden);
-  }
-
-  hidden.value = checked.join(', ');
-}
-
-document.querySelectorAll('input[name="aktivitate_skersli"]').forEach(input => {
-  input.addEventListener('change', syncBarrierAnswers);
-});
-
-document.querySelector('.family-form')?.addEventListener('submit', syncBarrierAnswers);

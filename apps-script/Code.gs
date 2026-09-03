@@ -1,6 +1,5 @@
 const SPREADSHEET_ID = '';
 const SHEET_NAME = 'Pieteikumi';
-const SURVEY_SHEET_NAME = 'Anonīmās atbildes';
 
 const REGISTRATION_HEADERS = [
   'Laiks',
@@ -13,15 +12,6 @@ const REGISTRATION_HEADERS = [
   'Ieraksta avots'
 ];
 
-const SURVEY_HEADERS = [
-  'Laiks',
-  'Cik bieži ģimene ir fiziski aktīva kopā?',
-  'Zināšanas par veidiem, kā ikdienā iekļaut fiziskās aktivitātes',
-  'Motivācija būt fiziski aktīvākiem kopā',
-  'Kas traucē būt fiziski aktīviem kopā?',
-  'Cits šķērslis',
-  'Ieraksta avots'
-];
 
 function doPost(e) {
   try {
@@ -33,12 +23,9 @@ function doPost(e) {
       : SpreadsheetApp.getActiveSpreadsheet();
 
     const registrationSheet = getOrCreateSheet_(ss, SHEET_NAME);
-    const surveySheet = getOrCreateSheet_(ss, SURVEY_SHEET_NAME);
-
     // This updates the first row to the current form structure.
     // It removes the old "Īpašas vajadzības / piekļūstamības piezīmes" column from the active structure.
     prepareSheet_(registrationSheet, REGISTRATION_HEADERS);
-    prepareSheet_(surveySheet, SURVEY_HEADERS);
 
     const familyName = firstValue_(params, [
       'familyName',
@@ -100,39 +87,6 @@ function doPost(e) {
       'Mājaslapas forma'
     ]);
 
-    const familyActivity = firstValue_(params, [
-      'gimenes_fiziska_aktivitate_kopa'
-    ]);
-
-    const knowledge = firstValue_(params, [
-      'zinasanas_par_fiziskam_aktivitatem'
-    ]);
-
-    const motivation = firstValue_(params, [
-      'gimenes_motivacija_but_aktivakai'
-    ]);
-
-    const barriers = firstValue_(params, [
-      'aktivitate_skersli_selected'
-    ]) || joinMulti_(params, allParams, [
-      'aktivitate_skersli'
-    ]);
-
-    const barriersOther = firstValue_(params, [
-      'aktivitate_skersli_cits'
-    ]);
-
-    if (familyActivity || knowledge || motivation || barriers || barriersOther) {
-      surveySheet.appendRow([
-        new Date(),
-        familyActivity,
-        knowledge,
-        motivation,
-        barriers,
-        barriersOther,
-        'Mājaslapas forma'
-      ]);
-    }
 
     if (email) {
       sendConfirmationEmail_(email, familyName);
@@ -162,7 +116,7 @@ function sendConfirmationEmail_(email, familyName) {
   const textBody =
     greeting + '\n\n' +
     'Paldies! Jūsu ģimenes pieteikums Eiropas Ģimeņu festivālam ir saņemts un apstiprināts.\n\n' +
-    'Pasākums norisināsies 2026. gada 22. augustā Uzvaras parkā, Rīgā, no plkst. 11.00 līdz 17.00.\n\n' +
+    'Pasākums norisināsies 2026. gada 19. septembrī Uzvaras parkā, Rīgā, no plkst. 11.00 līdz 17.00.\n\n' +
     'Pasākuma dienā reģistrācijas punktā nosauciet savu ģimenes nosaukumu un saņemsiet savas aktivitāšu kartītes.\n\n' +
     'Dalība pasākumā ir bez maksas.\n\n' +
     'Uz tikšanos Eiropas Ģimeņu festivālā!\n\n' +
@@ -171,7 +125,7 @@ function sendConfirmationEmail_(email, familyName) {
   const htmlBody =
     '<p>' + escapeHtml_(greeting) + '</p>' +
     '<p><strong>Paldies! Jūsu ģimenes pieteikums Eiropas Ģimeņu festivālam ir saņemts un apstiprināts.</strong></p>' +
-    '<p>Pasākums norisināsies <strong>2026. gada 22. augustā Uzvaras parkā, Rīgā, no plkst. 11.00 līdz 17.00.</strong></p>' +
+    '<p>Pasākums norisināsies <strong>2026. gada 19. septembrī Uzvaras parkā, Rīgā, no plkst. 11.00 līdz 17.00.</strong></p>' +
     '<p>Pasākuma dienā reģistrācijas punktā nosauciet savu ģimenes nosaukumu un saņemsiet savas aktivitāšu kartītes.</p>' +
     '<p>Dalība pasākumā ir bez maksas.</p>' +
     '<p>Uz tikšanos Eiropas Ģimeņu festivālā!</p>' +
