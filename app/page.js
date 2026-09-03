@@ -144,8 +144,6 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <article class="activity-card"><span>Latvijas Paralimpiskā komiteja</span><h3>Sajūti parasportu</h3><p>Iepazīstiet šoudaunu — parasporta spēli, kur īpaši svarīga ir dzirde, koncentrēšanās un precizitāte.</p></article>
       <article class="activity-card"><span>Galda teniss</span><h3>Galda tenisa robots</h3><p>Pārbaudiet reakciju un precizitāti, spēlējot ar galda tenisa robotu un trāpot mērķa zonā.</p></article>
       <article class="activity-card"><span>Krosmintons</span><h3>Ātrā saspēle gaisā</h3><p>Izmēģiniet dinamisku rakešu spēli, kur galvenais ir kustība, precizitāte un laba saspēle.</p></article>
-      <article class="activity-card"><span>Šaušana</span><h3>Precīzais mērķis</h3><p>Iepazīstiet šaušanas sporta pamatus drošā un kontrolētā vidē, koncentrējoties uz mērķēšanu un mieru.</p></article>
-      <article class="activity-card"><span>Burāšana</span><h3>Burāšanas piedzīvojums krastā</h3><p>Apskatiet burāšanas inventāru, iemācieties mezglus un uzziniet, kā vējš un zināšanas palīdz vadīt laivu.</p></article>
       <article class="activity-card"><span>Kērlings</span><h3>Akmens līdz centram</h3><p>Izmēģiniet grīdas kērlingu un mēģiniet nogādāt akmeni pēc iespējas tuvāk mērķa centram.</p></article>
       <article class="activity-card"><span>Sporta joga</span><h3>Jogas līdzsvara mirklis</h3><p>Iepazīstiet sporta jogu ar vienkāršām pozām un līdzsvara elementiem dažādiem vecumiem.</p></article>
       <article class="activity-card"><span>Džiu-džitsu</span><h3>Džiu-džitsu kustību laukums</h3><p>Vērojiet paraugdemonstrējumus, iepazīstiet pamata kustības un uzziniet vairāk par šo cīņas sporta veidu.</p></article>
@@ -289,8 +287,6 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/win-win-sport.png" alt="WIN WIN SPORT" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-barbora.png" alt="Barbora" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-tervete.png" alt="Dabas parks Tērvete" /></div>
-      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-rigas-mezi.jpg" alt="Rīgas Meži" /></div>
-      <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-riga-policija.png" alt="Rīgas valstspilsētas pašvaldības policija" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-jspa.png" alt="Jaunatnes starptautisko programmu aģentūra" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-viaa.png" alt="Valsts izglītības attīstības aģentūra" /></div>
       <div class="support-logo-tile"><img class="org-logo org-logo--support" src="/assets/logos/support-antidopings.png" alt="Latvijas Antidopinga birojs" /></div>
@@ -312,8 +308,6 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="partner-logo-tile"><img src="/assets/logos/partner-lpk.png" alt="Latvijas Paralimpiskā komiteja" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-gtf.png" alt="Latvijas Galda tenisa federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-krosmintons.png" alt="Latvijas Krosmintona federācija" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-sausana.png" alt="Latvijas Šaušanas federācija" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-sailing-latvia.png" alt="Sailing Latvia" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-kerlings.jpg" alt="Latvijas Kērlinga asociācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-sporta-joga.png" alt="Latvijas Sporta jogas federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-jiu-jitsu.png" alt="Latvijas Džiu-džitsu federācija" /></div>

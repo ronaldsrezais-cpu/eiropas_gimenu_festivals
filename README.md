@@ -66,3 +66,6 @@ Update:
 
 
 Update: Removed the static event map image, restored a Google Maps embed for Uzvaras parks, and added the sentence “Pasākuma karte tiks drīzumā atjaunota.”
+
+
+Update: Removed Burāšana, Šaušana, Rīgas Meži and police from visible activity/logo sections. Removed corresponding sailing, shooting, Rīgas Meži and police logo entries from footer.
