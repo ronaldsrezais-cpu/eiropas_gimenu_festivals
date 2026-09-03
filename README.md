@@ -63,3 +63,6 @@ Update:
 - Reopened the registration form.
 - Removed the anonymous survey questions from the form.
 - Updated countdown target and confirmation email date.
+
+
+Update: Removed the static event map image, restored a Google Maps embed for Uzvaras parks, and added the sentence “Pasākuma karte tiks drīzumā atjaunota.”

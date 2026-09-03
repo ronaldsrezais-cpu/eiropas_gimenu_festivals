@@ -161,13 +161,14 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <article class="activity-card"><span>Florbols</span><h3>Florbola ātrums un precizitāte</h3><p>Metiet pa vārtiem, pārbaudiet metiena ātrumu un izpildiet veiklības uzdevumus kopā ar ģimeni.</p></article>
       </div>
       </section>
-      <section class="section-pad map-section map-section-full" id="karte">
+      <section class="section-pad map-section" id="karte">
       <div class="map-copy">
       <span class="section-label">Pasākuma karte</span>
       <h2>Uzvaras parks</h2>
+      <p>Pasākuma karte tiks drīzumā atjaunota.</p>
       </div>
-      <div class="map-embed festival-map-embed" aria-label="Eiropas Ģimeņu festivāla teritorijas plāns">
-      <img src="/assets/map/festival-map.png" alt="Eiropas Ģimeņu festivāla teritorijas plāns Uzvaras parkā" loading="lazy" />
+      <div class="map-embed" aria-label="Uzvaras parks Google Maps kartē">
+      <iframe title="Uzvaras parks, Rīga" src="https://maps.google.com/maps?q=Uzvaras%20parks%2C%20R%C4%ABga%2C%20Latvija&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       </section>
       <section class="section-pad registration" id="registracija">
