@@ -320,6 +320,7 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="partner-logo-tile"><img src="/assets/logos/partner-ritenbrauksana.png" alt="Latvijas Riteņbraukšanas federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-gracijas.png" alt="Sporta grāciju federācijas logo" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-lfs.png" alt="Latvijas Florbola savienība" /></div>
+      <div class="partner-logo-tile"><img src="/assets/logos/partner-ltsa.png" alt="Latvijas Tautas sporta asociācija" /></div>
       </div>
       </div>
       <div class="eu-note footer-legal">

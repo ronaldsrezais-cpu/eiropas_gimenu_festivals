@@ -69,3 +69,8 @@ Update: Removed the static event map image, restored a Google Maps embed for Uzv
 
 
 Update: Removed Burāšana, Šaušana, Rīgas Meži and police from visible activity/logo sections. Removed corresponding sailing, shooting, Rīgas Meži and police logo entries from footer.
+
+Update: Apps Script now records confirmation e-mail delivery status in the Pieteikumi sheet. New columns: Apstiprinājuma e-pasta statuss, Apstiprinājuma e-pasta laiks, Apstiprinājuma e-pasta kļūda, Atlikusī e-pastu kvota.
+
+
+Update: Added LTSA logo to the Partneri section and synchronized it on the thank-you page footer.

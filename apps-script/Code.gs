@@ -9,9 +9,12 @@ const REGISTRATION_HEADERS = [
   'Bērnu skaits',
   'Bērnu vecuma grupas',
   'Piekrišana organizatoriskajām vajadzībām un foto/video izmantošanai',
-  'Ieraksta avots'
+  'Ieraksta avots',
+  'Apstiprinājuma e-pasta statuss',
+  'Apstiprinājuma e-pasta laiks',
+  'Apstiprinājuma e-pasta kļūda',
+  'Atlikusī e-pastu kvota'
 ];
-
 
 function doPost(e) {
   try {
@@ -24,7 +27,7 @@ function doPost(e) {
 
     const registrationSheet = getOrCreateSheet_(ss, SHEET_NAME);
     // This updates the first row to the current form structure.
-    // It removes the old "Īpašas vajadzības / piekļūstamības piezīmes" column from the active structure.
+    // It keeps the registration data and adds e-mail delivery status columns.
     prepareSheet_(registrationSheet, REGISTRATION_HEADERS);
 
     const familyName = firstValue_(params, [
@@ -76,27 +79,51 @@ function doPost(e) {
       'Piekrišana'
     ]) || 'Jā';
 
+    const submittedAt = new Date();
+    let emailStatus = 'Nav e-pasta';
+    let emailSentAt = '';
+    let emailError = '';
+    let remainingQuota = '';
+
+    if (email) {
+      try {
+        sendConfirmationEmail_(email, familyName);
+        emailStatus = 'Nosūtīts';
+        emailSentAt = new Date();
+      } catch (mailError) {
+        emailStatus = 'Neizdevās';
+        emailError = mailError && mailError.message ? mailError.message : String(mailError);
+      }
+
+      try {
+        remainingQuota = MailApp.getRemainingDailyQuota();
+      } catch (quotaError) {
+        remainingQuota = '';
+      }
+    }
+
     registrationSheet.appendRow([
-      new Date(),
+      submittedAt,
       familyName,
       email,
       adults,
       children,
       childAges,
       consent,
-      'Mājaslapas forma'
+      'Mājaslapas forma',
+      emailStatus,
+      emailSentAt,
+      emailError,
+      remainingQuota
     ]);
-
-
-    if (email) {
-      sendConfirmationEmail_(email, familyName);
-    }
 
     return jsonResponse_({
       ok: true,
-      message: email
+      message: emailStatus === 'Nosūtīts'
         ? 'Paldies, pieteikums saņemts. Dalības apstiprinājumu saņemsiet norādītajā e-pastā.'
-        : 'Paldies, pieteikums saņemts.'
+        : (emailStatus === 'Neizdevās'
+          ? 'Paldies, pieteikums ir saglabāts, bet apstiprinājuma e-pastu neizdevās nosūtīt.'
+          : 'Paldies, pieteikums saņemts.')
     });
   } catch (error) {
     return jsonResponse_({
@@ -157,7 +184,7 @@ function prepareSheet_(sheet, headers) {
 
   const lastColumn = sheet.getLastColumn();
 
-  // Clear old extra header cells to the right, for example the old accessibility notes column.
+  // Clear old extra header cells to the right, for example old survey/accessibility columns.
   if (lastColumn > headers.length) {
     sheet.getRange(1, headers.length + 1, 1, lastColumn - headers.length).clearContent();
   }
