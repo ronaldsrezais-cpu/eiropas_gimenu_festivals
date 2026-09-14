@@ -153,7 +153,6 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <article class="activity-card"><span>Handbols</span><h3>Metiens vārtos!</h3><p>Izmēģiniet handbola metienus, stafetes elementus un pārbaudiet spēku, precizitāti un veiklību.</p></article>
       <article class="activity-card"><span>Darts</span><h3>Trāpi desmitniekā</h3><p>Apgūstiet šautriņu mešanas pamatus un pārbaudiet precizitāti draudzīgā punktu izaicinājumā.</p></article>
       <article class="activity-card"><span>Boulings</span><h3>Ķegļu medības</h3><p>Metiet boulinga bumbu, gāziet ķegļus un piedalieties īsā viktorīnā par boulingu.</p></article>
-      <article class="activity-card"><span>Sporta cīņa</span><h3>Cīņas sporta ātrais kurss</h3><p>Iepazīstiet brīvās cīņas pamatus treneru un sportistu vadībā.</p></article>
       <article class="activity-card"><span>Riteņbraukšana</span><h3>Virtuālais velo kilometrs</h3><p>Sēdieties uz velotrenažiera un veiciet 1 km braucienu Zwift virtuālajā riteņbraukšanas vidē.</p></article>
       <article class="activity-card"><span>Bridžs</span><h3>Mazais bridža galds</h3><p>Iepazīstiet bērniem draudzīgu kāršu spēli, kas attīsta domāšanu, rēķināšanu un stratēģiju.</p></article>
       <article class="activity-card"><span>Florbols</span><h3>Florbola ātrums un precizitāte</h3><p>Metiet pa vārtiem, pārbaudiet metiena ātrumu un izpildiet veiklības uzdevumus kopā ar ģimeni.</p></article>
@@ -316,7 +315,6 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <div class="partner-logo-tile"><img src="/assets/logos/partner-handbols.png" alt="Latvijas Handbola federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-darts.png" alt="Latvijas Darts organizācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-boulings.png" alt="Latvijas Boulinga federācija" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-sporta-cinas.png" alt="Latvijas Sporta cīņas federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-ritenbrauksana.png" alt="Latvijas Riteņbraukšanas federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-gracijas.png" alt="Sporta grāciju federācijas logo" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-lfs.png" alt="Latvijas Florbola savienība" /></div>

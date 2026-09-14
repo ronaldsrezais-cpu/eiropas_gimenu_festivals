@@ -107,7 +107,6 @@ const pageHtml = `<header class="site-header" id="top">
       <div class="partner-logo-tile"><img src="/assets/logos/partner-handbols.png" alt="Latvijas Handbola federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-darts.png" alt="Latvijas Darts organizācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-boulings.png" alt="Latvijas Boulinga federācija" /></div>
-      <div class="partner-logo-tile"><img src="/assets/logos/partner-sporta-cinas.png" alt="Latvijas Sporta cīņas federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-ritenbrauksana.png" alt="Latvijas Riteņbraukšanas federācija" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-gracijas.png" alt="Sporta grāciju federācijas logo" /></div>
       <div class="partner-logo-tile"><img src="/assets/logos/partner-lfs.png" alt="Latvijas Florbola savienība" /></div>
