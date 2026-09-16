@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-        <script src="/festival-updates-20260916-v2.js?v=20260916-3" defer></script>
+        <script src="/festival-updates-20260916-v3.js?v=20260916-4" defer></script>
         {/* Meta Pixel Code */}
         <script
           id="meta-pixel-base"
