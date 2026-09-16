@@ -156,16 +156,16 @@ import Script from "next/script"; const pageHtml = `<header class="site-header" 
       <article class="activity-card"><span>Riteņbraukšana</span><h3>Virtuālais velo kilometrs</h3><p>Sēdieties uz velotrenažiera un veiciet 1 km braucienu Zwift virtuālajā riteņbraukšanas vidē.</p></article>
       <article class="activity-card"><span>Bridžs</span><h3>Mazais bridža galds</h3><p>Iepazīstiet bērniem draudzīgu kāršu spēli, kas attīsta domāšanu, rēķināšanu un stratēģiju.</p></article>
       <article class="activity-card"><span>Florbols</span><h3>Florbola ātrums un precizitāte</h3><p>Metiet pa vārtiem, pārbaudiet metiena ātrumu un izpildiet veiklības uzdevumus kopā ar ģimeni.</p></article>
+      <article class="activity-card"><span>Tautas sports</span><h3>Nūjošana</h3><p>Apgūstiet un praktizējiet pareizu nūjošanas tehniku, uzziniet, kā izvēlēties savam augumam atbilstošu nūju garumu, un iepazīstiet nūjošanu kā viegli apgūstamu un dažādiem vecumiem piemērotu fizisko aktivitāti.</p></article>
       </div>
       </section>
-      <section class="section-pad map-section" id="karte">
+      <section class="section-pad map-section map-section-full" id="karte">
       <div class="map-copy">
       <span class="section-label">Pasākuma karte</span>
       <h2>Uzvaras parks</h2>
-      <p>Pasākuma karte tiks drīzumā atjaunota.</p>
       </div>
-      <div class="map-embed" aria-label="Uzvaras parks Google Maps kartē">
-      <iframe title="Uzvaras parks, Rīga" src="https://maps.google.com/maps?q=Uzvaras%20parks%2C%20R%C4%ABga%2C%20Latvija&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="map-embed festival-map-embed" aria-label="Eiropas Ģimeņu festivāla teritorijas plāns">
+      <img src="/assets/map/festival-map-2026-09-19.jpg" alt="Eiropas Ģimeņu festivāla teritorijas plāns Uzvaras parkā" loading="lazy" />
       </div>
       </section>
       <section class="section-pad registration" id="registracija">

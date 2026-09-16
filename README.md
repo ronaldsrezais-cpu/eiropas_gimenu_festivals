@@ -74,3 +74,6 @@ Update: Apps Script now records confirmation e-mail delivery status in the Piete
 
 
 Update: Added LTSA logo to the Partneri section and synchronized it on the thank-you page footer.
+
+
+Update 2026-09-16: Replaced the event map with the latest supplied 19 September territory plan.
