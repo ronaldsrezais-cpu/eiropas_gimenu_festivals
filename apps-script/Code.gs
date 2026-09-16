@@ -1,6 +1,12 @@
 const SPREADSHEET_ID = '';
 const SHEET_NAME = 'Pieteikumi';
 
+// Anti-spam values used by the website form.
+// This token is not a password; it helps reject generic bots that post directly to the Web App URL.
+const FORM_PROTECTION_TOKEN = 'HH26-REG-7b4f9c2e-a81d';
+const MIN_FORM_FILL_MS = 1500;
+const MAX_FORM_FILL_MS = 12 * 60 * 60 * 1000;
+
 const REGISTRATION_HEADERS = [
   'Laiks',
   'Ģimenes nosaukums aktivitāšu kartei',
@@ -18,17 +24,8 @@ const REGISTRATION_HEADERS = [
 
 function doPost(e) {
   try {
-    const params = e.parameter || {};
-    const allParams = e.parameters || {};
-
-    const ss = SPREADSHEET_ID
-      ? SpreadsheetApp.openById(SPREADSHEET_ID)
-      : SpreadsheetApp.getActiveSpreadsheet();
-
-    const registrationSheet = getOrCreateSheet_(ss, SHEET_NAME);
-    // This updates the first row to the current form structure.
-    // It keeps the registration data and adds e-mail delivery status columns.
-    prepareSheet_(registrationSheet, REGISTRATION_HEADERS);
+    const params = e && e.parameter ? e.parameter : {};
+    const allParams = e && e.parameters ? e.parameters : {};
 
     const familyName = firstValue_(params, [
       'familyName',
@@ -79,6 +76,41 @@ function doPost(e) {
       'Piekrišana'
     ]) || 'Jā';
 
+    // IMPORTANT: anti-spam checks happen BEFORE opening the sheet and BEFORE sending any e-mail.
+    // This protects the Google e-mail quota from bot submissions.
+    const protection = validateSubmission_(params, familyName, email, adults, children, childAges);
+    if (!protection.ok) {
+      console.log('Blocked registration: ' + protection.reason);
+
+      // For obvious bots, return a generic success response so they receive no useful feedback.
+      if (protection.silent) {
+        return jsonResponse_({
+          ok: true,
+          message: 'Paldies, pieteikums saņemts.'
+        });
+      }
+
+      return jsonResponse_({
+        ok: false,
+        message: protection.message || 'Pieteikumu neizdevās nosūtīt. Lūdzu, pārlādējiet lapu un mēģiniet vēlreiz.'
+      });
+    }
+
+    // Prevent accidental double-clicks / repeated identical submissions for two minutes.
+    if (isRecentDuplicate_(familyName, email)) {
+      return jsonResponse_({
+        ok: true,
+        message: 'Paldies, pieteikums saņemts.'
+      });
+    }
+
+    const ss = SPREADSHEET_ID
+      ? SpreadsheetApp.openById(SPREADSHEET_ID)
+      : SpreadsheetApp.getActiveSpreadsheet();
+
+    const registrationSheet = getOrCreateSheet_(ss, SHEET_NAME);
+    prepareSheet_(registrationSheet, REGISTRATION_HEADERS);
+
     const submittedAt = new Date();
     let emailStatus = 'Nav e-pasta';
     let emailSentAt = '';
@@ -87,18 +119,26 @@ function doPost(e) {
 
     if (email) {
       try {
-        sendConfirmationEmail_(email, familyName);
-        emailStatus = 'Nosūtīts';
-        emailSentAt = new Date();
+        remainingQuota = MailApp.getRemainingDailyQuota();
+
+        if (Number(remainingQuota) <= 0) {
+          emailStatus = 'Neizdevās';
+          emailError = 'Sasniegts Google dienas e-pastu nosūtīšanas limits.';
+        } else {
+          sendConfirmationEmail_(email, familyName);
+          emailStatus = 'Nosūtīts';
+          emailSentAt = new Date();
+          remainingQuota = MailApp.getRemainingDailyQuota();
+        }
       } catch (mailError) {
         emailStatus = 'Neizdevās';
         emailError = mailError && mailError.message ? mailError.message : String(mailError);
-      }
 
-      try {
-        remainingQuota = MailApp.getRemainingDailyQuota();
-      } catch (quotaError) {
-        remainingQuota = '';
+        try {
+          remainingQuota = MailApp.getRemainingDailyQuota();
+        } catch (quotaError) {
+          remainingQuota = '';
+        }
       }
     }
 
@@ -130,6 +170,128 @@ function doPost(e) {
       ok: false,
       message: error && error.message ? error.message : 'Neizdevās saglabāt pieteikumu.'
     });
+  }
+}
+
+function validateSubmission_(params, familyName, email, adults, children, childAges) {
+  const honeypot = firstValue_(params, ['website', 'websiteUrl', 'companyWebsite']);
+  if (honeypot) {
+    return { ok: false, silent: true, reason: 'honeypot-filled' };
+  }
+
+  const token = firstValue_(params, ['formProtectionToken']);
+  if (token !== FORM_PROTECTION_TOKEN) {
+    return {
+      ok: false,
+      silent: false,
+      reason: 'missing-or-invalid-form-token',
+      message: 'Lūdzu, pārlādējiet lapu un mēģiniet pieteikumu nosūtīt vēlreiz.'
+    };
+  }
+
+  const startedAtRaw = firstValue_(params, ['formStartedAt']);
+  const startedAt = Number(startedAtRaw);
+  const elapsed = Date.now() - startedAt;
+
+  if (!startedAtRaw || !isFinite(startedAt) || elapsed < MIN_FORM_FILL_MS || elapsed > MAX_FORM_FILL_MS) {
+    return {
+      ok: false,
+      silent: false,
+      reason: 'invalid-form-timing',
+      message: 'Lūdzu, pārlādējiet lapu un mēģiniet pieteikumu nosūtīt vēlreiz.'
+    };
+  }
+
+  if (looksLikeSpamText_(familyName)) {
+    return { ok: false, silent: true, reason: 'spam-pattern-in-family-name' };
+  }
+
+  if (!familyName || familyName.length > 120) {
+    return {
+      ok: false,
+      silent: false,
+      reason: 'invalid-family-name',
+      message: 'Lūdzu, pārbaudiet ģimenes nosaukumu.'
+    };
+  }
+
+  if (!isValidEmail_(email)) {
+    return {
+      ok: false,
+      silent: false,
+      reason: 'invalid-email',
+      message: 'Lūdzu, pārbaudiet norādīto e-pasta adresi.'
+    };
+  }
+
+  const adultCount = Number(adults);
+  const childCount = Number(children);
+
+  if (!Number.isInteger(adultCount) || adultCount < 0 || adultCount > 20 ||
+      !Number.isInteger(childCount) || childCount < 0 || childCount > 20 ||
+      adultCount + childCount < 1) {
+    return {
+      ok: false,
+      silent: false,
+      reason: 'invalid-participant-count',
+      message: 'Lūdzu, pārbaudiet norādīto dalībnieku skaitu.'
+    };
+  }
+
+  if (childCount > 0 && !childAges) {
+    return {
+      ok: false,
+      silent: false,
+      reason: 'missing-child-age-group',
+      message: 'Lūdzu, izvēlieties vismaz vienu bērnu vecuma grupu.'
+    };
+  }
+
+  return { ok: true };
+}
+
+function looksLikeSpamText_(value) {
+  const text = String(value || '').toLowerCase();
+  if (!text) return false;
+
+  const spamPatterns = [
+    /https?:\/\//i,
+    /www\./i,
+    /graph\.org/i,
+    /cloud[\s-]*mining/i,
+    /message\s+for\s+you/i,
+    /one\s+message/i,
+    /a\s+new\s+message/i,
+    /\b(?:open|read)\s*(?:=>|->|>>>|>>)/i,
+    /telegram/i,
+    /crypto/i,
+    /bitcoin/i
+  ];
+
+  return spamPatterns.some(function(pattern) {
+    return pattern.test(text);
+  });
+}
+
+function isValidEmail_(email) {
+  const value = String(email || '').trim();
+  if (!value || value.length > 254) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(value);
+}
+
+function isRecentDuplicate_(familyName, email) {
+  try {
+    const cache = CacheService.getScriptCache();
+    const rawKey = String(familyName || '').toLowerCase().trim() + '|' + String(email || '').toLowerCase().trim();
+    const digest = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, rawKey, Utilities.Charset.UTF_8);
+    const key = 'reg-' + Utilities.base64EncodeWebSafe(digest).replace(/=+$/g, '').substring(0, 40);
+
+    if (cache.get(key)) return true;
+    cache.put(key, '1', 120);
+    return false;
+  } catch (error) {
+    // If cache is unavailable, never block a legitimate registration.
+    return false;
   }
 }
 
@@ -184,7 +346,6 @@ function prepareSheet_(sheet, headers) {
 
   const lastColumn = sheet.getLastColumn();
 
-  // Clear old extra header cells to the right, for example old survey/accessibility columns.
   if (lastColumn > headers.length) {
     sheet.getRange(1, headers.length + 1, 1, lastColumn - headers.length).clearContent();
   }
@@ -218,7 +379,6 @@ function joinMulti_(params, allParams, keys) {
     }
   });
 
-  // Remove duplicates while keeping order.
   return values.filter(function(value, index, array) {
     return array.indexOf(value) === index;
   }).join(', ');
