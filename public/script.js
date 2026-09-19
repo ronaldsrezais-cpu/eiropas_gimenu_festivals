@@ -23,38 +23,35 @@ function tick() {
     return;
   }
 
-  const distance =
-    Math.max(0, target - Date.now());
+  const distance = Math.max(
+    0,
+    target - Date.now()
+  );
 
-  const days =
-    Math.floor(
+  const days = Math.floor(
+    distance / (1000 * 60 * 60 * 24)
+  );
+
+  const hours = Math.floor(
+    (
       distance /
-      (1000 * 60 * 60 * 24)
-    );
+      (1000 * 60 * 60)
+    ) % 24
+  );
 
-  const hours =
-    Math.floor(
-      (
-        distance /
-        (1000 * 60 * 60)
-      ) % 24
-    );
+  const minutes = Math.floor(
+    (
+      distance /
+      (1000 * 60)
+    ) % 60
+  );
 
-  const minutes =
-    Math.floor(
-      (
-        distance /
-        (1000 * 60)
-      ) % 60
-    );
-
-  const seconds =
-    Math.floor(
-      (
-        distance /
-        1000
-      ) % 60
-    );
+  const seconds = Math.floor(
+    (
+      distance /
+      1000
+    ) % 60
+  );
 
   fields.days.textContent = pad(days);
   fields.hours.textContent = pad(hours);
@@ -70,12 +67,16 @@ if (
   fields.seconds
 ) {
   tick();
-  setInterval(tick, 1000);
+
+  setInterval(
+    tick,
+    1000
+  );
 }
 
 
 // -------------------------------------------------
-// MOBILE MENU
+// GALVENE / MOBILĀ IZVĒLNE
 // -------------------------------------------------
 
 const header =
@@ -102,13 +103,13 @@ menuButton?.addEventListener(
 
 document
   .querySelectorAll('.main-nav a')
-  .forEach(link => {
+  .forEach(function(link) {
 
     link.addEventListener(
       'click',
-      () => {
+      function() {
 
-        header.classList.remove('open');
+        header?.classList.remove('open');
 
         menuButton?.setAttribute(
           'aria-expanded',
@@ -133,21 +134,116 @@ const formStatus =
     'formStatus'
   );
 
+const hiddenSubmitFrame =
+  document.querySelector(
+    'iframe[name="hiddenSubmitFrame"]'
+  );
+
+
 let registrationSubmissionInProgress =
   false;
 
 let registrationSubmissionTimeout =
   null;
 
+let registrationIframeFallbackTimer =
+  null;
 
-if (familyForm && formStatus) {
+
+// -------------------------------------------------
+// VEIKSMĪGAS REĢISTRĀCIJAS PAZIŅOJUMS
+// -------------------------------------------------
+
+function showRegistrationSuccess() {
+
+  window.clearTimeout(
+    registrationSubmissionTimeout
+  );
+
+  window.clearTimeout(
+    registrationIframeFallbackTimer
+  );
+
+  registrationSubmissionInProgress =
+    false;
+
+
+  const submitButton =
+    familyForm?.querySelector(
+      'button[type="submit"], input[type="submit"]'
+    );
+
+
+  if (submitButton) {
+    submitButton.disabled = false;
+  }
+
+
+  if (!formStatus || !familyForm) {
+    return;
+  }
+
+
+  formStatus.innerHTML =
+    '<strong>Paldies, reģistrācija veiksmīga.</strong><br>' +
+    '<strong>Reģistrācijas punktā nosauciet savu ģimenes nosaukumu</strong> ' +
+    'un saņemsiet savas aktivitāšu kartītes.';
+
+
+  formStatus.style.color =
+    '#16784b';
+
+
+  // ---------------------------------------------
+  // META PIXEL
+  // ---------------------------------------------
+
+  if (
+    typeof window.fbq === 'function'
+  ) {
+    window.fbq(
+      'track',
+      'Lead'
+    );
+  }
+
+
+  // ---------------------------------------------
+  // NOTĪRĀM FORMU
+  // ---------------------------------------------
+
+  familyForm.reset();
+
+
+  // ---------------------------------------------
+  // PARĀDĀM PAZIŅOJUMU LIETOTĀJAM
+  // ---------------------------------------------
+
+  formStatus.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+
+
+// -------------------------------------------------
+// FORMAS IESNIEGŠANA
+// -------------------------------------------------
+
+if (
+  familyForm &&
+  formStatus
+) {
 
   familyForm.addEventListener(
     'submit',
     function(event) {
 
       const action =
-        familyForm.getAttribute('action') || '';
+        familyForm.getAttribute(
+          'action'
+        ) || '';
+
 
       const selectedAgeGroups =
         familyForm.querySelectorAll(
@@ -155,26 +251,36 @@ if (familyForm && formStatus) {
         );
 
 
-      // Bērna vecuma grupa ir obligāta
-      if (selectedAgeGroups.length === 0) {
+      // -----------------------------------------
+      // BĒRNU VECUMA GRUPA
+      // -----------------------------------------
+
+      if (
+        selectedAgeGroups.length === 0
+      ) {
 
         event.preventDefault();
 
         registrationSubmissionInProgress =
           false;
 
+
         formStatus.textContent =
           'Lūdzu, izvēlieties vismaz vienu bērnu vecuma grupu.';
 
+
         formStatus.style.color =
           '#d84d39';
+
 
         return;
       }
 
 
-      // Drošības pārbaude, vai forma ir pieslēgta
-      // pie Apps Script.
+      // -----------------------------------------
+      // PĀRBAUDE, VAI FORMA PIESLĒGTA APPS SCRIPT
+      // -----------------------------------------
+
       if (
         action.includes(
           'PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE'
@@ -186,19 +292,29 @@ if (familyForm && formStatus) {
         registrationSubmissionInProgress =
           false;
 
+
         formStatus.textContent =
           'Forma vēl nav pieslēgta Google Sheets.';
 
+
         formStatus.style.color =
           '#d84d39';
+
 
         return;
       }
 
 
-      // Neļaujam nejauši nospiest pogu vairākas reizes.
-      if (registrationSubmissionInProgress) {
+      // -----------------------------------------
+      // NEĻAUJAM NOSPIEST POGU DIVREIZ
+      // -----------------------------------------
+
+      if (
+        registrationSubmissionInProgress
+      ) {
+
         event.preventDefault();
+
         return;
       }
 
@@ -212,6 +328,7 @@ if (familyForm && formStatus) {
           'button[type="submit"], input[type="submit"]'
         );
 
+
       if (submitButton) {
         submitButton.disabled = true;
       }
@@ -219,6 +336,7 @@ if (familyForm && formStatus) {
 
       formStatus.textContent =
         'Nosūtām pieteikumu...';
+
 
       formStatus.style.color =
         '#1597c4';
@@ -228,6 +346,15 @@ if (familyForm && formStatus) {
         registrationSubmissionTimeout
       );
 
+
+      window.clearTimeout(
+        registrationIframeFallbackTimer
+      );
+
+
+      // -----------------------------------------
+      // 30 SEKUNŽU DROŠĪBAS TIMEOUT
+      // -----------------------------------------
 
       registrationSubmissionTimeout =
         window.setTimeout(
@@ -239,15 +366,19 @@ if (familyForm && formStatus) {
               return;
             }
 
+
             registrationSubmissionInProgress =
               false;
+
 
             if (submitButton) {
               submitButton.disabled = false;
             }
 
+
             formStatus.textContent =
               'Pieteikumu neizdevās nosūtīt. Lūdzu, pārbaudiet interneta savienojumu un mēģiniet vēlreiz.';
+
 
             formStatus.style.color =
               '#d84d39';
@@ -259,9 +390,9 @@ if (familyForm && formStatus) {
   );
 
 
-  // ---------------------------------------------
+  // -------------------------------------------------
   // ATBILDE NO GOOGLE APPS SCRIPT
-  // ---------------------------------------------
+  // -------------------------------------------------
 
   window.addEventListener(
     'message',
@@ -285,6 +416,29 @@ if (familyForm && formStatus) {
       );
 
 
+      window.clearTimeout(
+        registrationIframeFallbackTimer
+      );
+
+
+      // -----------------------------------------
+      // VEIKSMĪGA REĢISTRĀCIJA
+      // -----------------------------------------
+
+      if (
+        data.ok === true
+      ) {
+
+        showRegistrationSuccess();
+
+        return;
+      }
+
+
+      // -----------------------------------------
+      // KĻŪDA
+      // -----------------------------------------
+
       registrationSubmissionInProgress =
         false;
 
@@ -294,58 +448,6 @@ if (familyForm && formStatus) {
           'button[type="submit"], input[type="submit"]'
         );
 
-
-      // -----------------------------------------
-      // VEIKSMĪGA REĢISTRĀCIJA
-      // -----------------------------------------
-
-      if (data.ok === true) {
-
-        formStatus.innerHTML =
-          '<strong>Paldies, reģistrācija veiksmīga.</strong><br>' +
-          '<strong>Reģistrācijas punktā nosauciet savu ģimenes nosaukumu</strong> ' +
-          'un saņemsiet savas aktivitāšu kartītes.';
-
-
-        formStatus.style.color =
-          '#16784b';
-
-
-        // Saglabājam Meta Lead event,
-        // kas iepriekš tika palaists /paldies lapā.
-        if (
-          typeof window.fbq === 'function'
-        ) {
-          window.fbq(
-            'track',
-            'Lead'
-          );
-        }
-
-
-        // Notīrām formu.
-        familyForm.reset();
-
-
-        if (submitButton) {
-          submitButton.disabled = false;
-        }
-
-
-        // Aizritinām līdz paziņojumam.
-        formStatus.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
-
-
-        return;
-      }
-
-
-      // -----------------------------------------
-      // KĻŪDA
-      // -----------------------------------------
 
       if (submitButton) {
         submitButton.disabled = false;
@@ -361,6 +463,55 @@ if (familyForm && formStatus) {
         '#d84d39';
     }
   );
+
+
+  // -------------------------------------------------
+  // REZERVES MEHĀNISMS
+  //
+  // Ja Apps Script atbilde ielādējas iframe,
+  // bet postMessage nenostrādā, parādām veiksmīgas
+  // reģistrācijas paziņojumu turpat lapā.
+  // -------------------------------------------------
+
+  hiddenSubmitFrame?.addEventListener(
+    'load',
+    function() {
+
+      if (
+        !registrationSubmissionInProgress
+      ) {
+        return;
+      }
+
+
+      window.clearTimeout(
+        registrationIframeFallbackTimer
+      );
+
+
+      registrationIframeFallbackTimer =
+        window.setTimeout(
+          function() {
+
+            if (
+              !registrationSubmissionInProgress
+            ) {
+              return;
+            }
+
+
+            window.clearTimeout(
+              registrationSubmissionTimeout
+            );
+
+
+            showRegistrationSuccess();
+
+          },
+          700
+        );
+    }
+  );
 }
 
 
@@ -369,7 +520,9 @@ if (familyForm && formStatus) {
 // -------------------------------------------------
 
 const logoBrand =
-  document.querySelector('.logo-brand');
+  document.querySelector(
+    '.logo-brand'
+  );
 
 
 logoBrand?.addEventListener(
@@ -378,12 +531,17 @@ logoBrand?.addEventListener(
 
     event.preventDefault();
 
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
 
-    header?.classList.remove('open');
+
+    header?.classList.remove(
+      'open'
+    );
+
 
     menuButton?.setAttribute(
       'aria-expanded',
